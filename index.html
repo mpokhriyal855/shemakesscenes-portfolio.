@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>She Makes Scenes – Marketing Portfolio</title>
+    <meta name="description"
+        content="She Makes Scenes – A vibrant marketing portfolio by Reese Jade Herron. Creative director, content creator, brand storyteller.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;600;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+    <!-- ══════════════════════════════════════
+         GLASSMORPHIC INTRO SPLASH
+         Auto-slides up after 3.5s, revealing the hero behind it
+    ══════════════════════════════════════ -->
+    <div class="splash" id="splash">
+
+        <!-- Deep background orbs / atmosphere -->
+        <div class="splash-bg">
+            <img src="assets/splash_bg.png" alt="" class="splash-bg-img">
+            <div class="splash-orb orb-a"></div>
+            <div class="splash-orb orb-b"></div>
+            <div class="splash-orb orb-c"></div>
+        </div>
+
+        <!-- Glass panels grid -->
+        <div class="glass-grid">
+            <div class="glass-panel gp-top-left">
+                <div class="gp-tag">Est. 2024</div>
+            </div>
+            <div class="glass-panel gp-top-right">
+                <div class="gp-tag">Portfolio ↗</div>
+            </div>
+        </div>
+
+        <!-- Centre content -->
+        <div class="splash-center">
+            <div class="splash-eyebrow">
+                <span>Creative Director &amp; Strategist</span>
+            </div>
+
+            <h1 class="splash-title">
+                <span class="st-line st-l1">SHE</span>
+                <span class="st-line st-l2"><em>Makes</em></span>
+                <span class="st-line st-l3">SCENES</span>
+            </h1>
+
+            <!-- Minimal Progress bar -->
+            <div class="splash-progress">
+                <div class="sp-bar">
+                    <div class="sp-fill" id="splashFill"></div>
+                </div>
+                <span class="sp-label">Loading experience</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ══════════════════════════════════════
+         HERO SECTION (Editorial & Clean)
+    ══════════════════════════════════════ -->
+    <section class="hero editorial-hero" id="hero">
+        <div class="hero-container">
+            <!-- Left Side: Typography -->
+            <div class="hero-text-col">
+                <div class="hero-eyebrow reveal-up">CREATIVE DIRECTOR & STRATEGIST</div>
+                <h1 class="hero-name">
+                    <span class="name-line reveal-up delay-1">renne</span>
+                    <span class="name-line reveal-up delay-2 italic-serif">thompiya</span>
+                </h1>
+                <div class="hero-sub reveal-up delay-3">
+                    <p>Crafting aesthetic brands, scrolling-stopping content, and digital experiences that convert.</p>
+                </div>
+
+                <div class="contact-dock reveal-up delay-4">
+                    <a href="mailto:contact@shemakesscenes.com" class="dock-btn email">
+                        Email Me
+                    </a>
+                    <a href="https://instagram.com/" target="_blank" rel="noopener" class="dock-btn ig">
+                        Instagram
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Side: Portrait -->
+            <div class="hero-image-col reveal-up delay-2">
+                <div class="image-frame">
+                    <img src="assets/portrait_transparent.png" alt="Mansi Pokhriyal" class="hero-portrait">
+                    <!-- Subtle floating camera accent -->
+                    <img src="assets/camera_transparent.png" alt="Camera" class="accent-camera float-bob">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT STRIP -->
+    <section class="about-strip">
+        <div class="about-grid">
+            <div class="about-text">
+                <p class="about-eyebrow">About Me</p>
+                <h2 class="about-title">I turn <em>brands</em> into <span class="highlight">moments.</span></h2>
+                <p class="about-body">Marketing strategist, content creator & all-round vibe curator. I specialize in
+                    making brands feel real, relatable, and ridiculously shareable.</p>
+                <a href="mailto:contact@shemakesscenes.com" class="cta-link">Let's work together →</a>
+            </div>
+            <div class="about-polaroid">
+                <div class="polaroid-wrapper float-bob">
+                    <img src="assets/polaroid.png" alt="Polaroid photo">
+                    <div class="polaroid-caption">that's me! 🎀</div>
+                </div>
+                <div class="handbag-float float-bob-alt">
+                    <img src="assets/handbag.png" alt="Handbag">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS STRIP -->
+    <section class="stats-strip">
+        <div class="stat-card s1">
+            <span class="stat-num" data-target="50">0</span><span class="stat-unit">+</span>
+            <span class="stat-label">Brand Campaigns</span>
+        </div>
+        <div class="stat-divider">✦</div>
+        <div class="stat-card s2">
+            <span class="stat-num" data-target="2">0</span><span class="stat-unit">M+</span>
+            <span class="stat-label">Impressions Generated</span>
+        </div>
+        <div class="stat-divider">✦</div>
+        <div class="stat-card s3">
+            <span class="stat-num" data-target="100">0</span><span class="stat-unit">%</span>
+            <span class="stat-label">Vibe Delivered</span>
+        </div>
+    </section>
+
+    <!-- SCROLL NOISE -->
+    <div class="noise-overlay"></div>
+
+    <!-- ══════════════════════════════════
+         SERVICES STRIP — Scrapbook Style
+    ══════════════════════════════════ -->
+    <section class="services-strip">
+        <div class="services-header reveal-up">
+            <h2 class="section-title">What I Do <span class="highlight">Best.</span></h2>
+            <p class="section-subtitle">Turning chaos into aesthetics and engagement into community.</p>
+        </div>
+
+        <div class="services-grid">
+            <!-- Service 1 -->
+            <div class="service-card pop-in" style="--tilt: -3deg;">
+                <div class="svc-tape"></div>
+                <img src="assets/iphone.png" alt="Social Media" class="svc-sticker s-top-right float-bob">
+                <h3 class="svc-title">Social Media Management</h3>
+                <p class="svc-desc">Scroll-stopping strategies, community building, and manipulating algorithms in your
+                    favor.</p>
+                <div class="svc-tags">
+                    <span>Instagram</span><span>TikTok</span><span>Pinterest</span>
+                </div>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="service-card pop-in delay-2" style="--tilt: 2deg;">
+                <div class="svc-tape tape-alt"></div>
+                <img src="assets/camera.png" alt="Content Creation" class="svc-sticker s-bottom-left float-bob-alt">
+                <h3 class="svc-title">Content Creation &amp; UGC</h3>
+                <p class="svc-desc">Aesthetic photography and short-form video that actually looks like it belongs on a
+                    moodboard.</p>
+                <div class="svc-tags">
+                    <span>Photography</span><span>Reels</span><span>Editing</span>
+                </div>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="service-card pop-in delay-4" style="--tilt: -1.5deg;">
+                <div class="svc-tape"></div>
+                <img src="assets/matcha.png" alt="Brand Strategy" class="svc-sticker s-top-left float-bob">
+                <h3 class="svc-title">Brand Strategy</h3>
+                <p class="svc-desc">Finding your authentic voice, visual identity, and market positioning so your brand
+                    feels like a lifestyle.</p>
+                <div class="svc-tags">
+                    <span>Identity</span><span>Positioning</span><span>Voice</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════
+         CASE STUDIES — Horizontal Swipe
+    ══════════════════════════════════ -->
+    <section class="portfolio-strip">
+        <div class="port-header reveal-up">
+            <h2 class="section-title">The <span class="highlight">Receipts.</span></h2>
+            <p class="section-subtitle">Swipe through some of my favorite campaigns.</p>
+        </div>
+
+        <div class="port-track-wrapper reveal-up delay-2">
+            <div class="port-track">
+                <!-- Case 1 -->
+                <div class="port-card">
+                    <img src="assets/feed_1.png" alt="Glow Skincare" class="port-img">
+                    <div class="port-overlay">
+                        <div class="port-meta">
+                            <h4>Glow Skincare</h4>
+                            <p>Brand Launch • 1.2M Reach</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Case 2 -->
+                <div class="port-card">
+                    <img src="assets/feed_2.png" alt="Aura Activewear" class="port-img">
+                    <div class="port-overlay">
+                        <div class="port-meta">
+                            <h4>Aura Activewear</h4>
+                            <p>UGC Campaign • +300% ROI</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Case 3 -->
+                <div class="port-card">
+                    <img src="assets/feed_3.png" alt="Matcha Moments" class="port-img">
+                    <div class="port-overlay">
+                        <div class="port-meta">
+                            <h4>Matcha Moments</h4>
+                            <p>Social Strategy • +50k Followers</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Case 4 -->
+                <div class="port-card">
+                    <img src="assets/feed_4.png" alt="Lumiere Beauty" class="port-img">
+                    <div class="port-overlay">
+                        <div class="port-meta">
+                            <h4>Lumiere Beauty</h4>
+                            <p>Content Production</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swipe-hint">← Swipe to explore →</div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════
+         CLIENT LOVE — iMessage Testimonials
+    ══════════════════════════════════ -->
+    <section class="testimonials-strip">
+        <div class="test-header reveal-up">
+            <h2 class="section-title">Client <span class="highlight">Love.</span></h2>
+            <p class="section-subtitle">Don't just take my word for it.</p>
+        </div>
+
+        <div class="chat-container">
+            <div class="chat-bubble left pop-in">
+                <div class="chat-text">"She Makes Scenes completely transformed our social presence. Our engagement is
+                    up 400% in two months!"</div>
+                <div class="chat-sender">— Glow Skincare</div>
+            </div>
+            <div class="chat-bubble right pop-in delay-2">
+                <div class="chat-text">"The UGC she produced for us was the highest converting ad creative we've ever
+                    had. Insane ROI."</div>
+                <div class="chat-sender">— Aura Activewear</div>
+            </div>
+            <div class="chat-bubble left pop-in delay-4">
+                <div class="chat-text">"A true visionary. She didn't just give us a brand strategy, she gave us a brand
+                    identity."</div>
+                <div class="chat-sender">— Matcha Moments</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════
+         FOOTER — Let's Connect
+    ══════════════════════════════════ -->
+    <footer class="footer-strip">
+        <div class="footer-content reveal-up">
+            <h2 class="footer-title">Let's Make <br> <span class="highlight italic">Scenes.</span></h2>
+            <p class="footer-sub">Ready to break the algorithm? Drop me a line.</p>
+
+            <a href="mailto:hello@shemakesscenes.com" class="footer-email">hello@shemakesscenes.com</a>
+
+            <div class="footer-socials">
+                <a href="#" class="social-link">Instagram</a>
+                <a href="#" class="social-link">TikTok</a>
+                <a href="#" class="social-link">LinkedIn</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 She Makes Scenes. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

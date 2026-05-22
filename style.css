@@ -1075,6 +1075,7 @@ body .stats-strip {
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
   transform: translateZ(0); /* Hardware acceleration */
   background: #000; /* Prevent white flashes */
+  container-type: size; /* Enable exact dimension mapping for rotation */
 }
 
 /* Masonry Aspect Ratios */
@@ -1098,8 +1099,22 @@ body .stats-strip {
 
 /* Ensure horizontal videos NEVER get cropped */
 .video-item.horizontal .v-thumb {
-  object-fit: contain;
-  background-color: #000;
+  object-fit: cover; /* We use cover so it fills the frame */
+}
+
+/* Perfect Rotation Fix using Container Queries */
+.rotate-fix {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100cqh !important;
+  height: 100cqw !important;
+  transform: translate(-50%, -50%) rotate(270deg) !important;
+  object-fit: cover !important;
+}
+
+.video-item:hover .rotate-fix {
+  transform: translate(-50%, -50%) rotate(270deg) scale(1.05) !important;
 }
 
 .video-item:hover .v-thumb {

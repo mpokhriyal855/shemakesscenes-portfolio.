@@ -1061,7 +1061,7 @@ body .stats-strip {
 .video-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  grid-auto-rows: 200px;
+  grid-auto-rows: 250px;
   gap: 20px;
   max-width: 1200px;
   margin: 0 auto;
@@ -1074,14 +1074,19 @@ body .stats-strip {
   cursor: pointer;
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
   transform: translateZ(0); /* Hardware acceleration */
+  background: #000; /* Prevent white flashes */
 }
 
 /* Masonry Aspect Ratios */
 .video-item.vertical {
-  grid-row: span 2; /* 400px + 20px gap */
+  grid-row: span 2; /* 500px + 20px gap (Perfect for 9:16 mobile videos so they don't cut) */
+}
+.video-item.horizontal {
+  grid-column: span 2; /* Wide format for 16:9 videos */
+  grid-row: span 1;
 }
 .video-item.square {
-  grid-row: span 1; /* 200px */
+  grid-row: span 1; /* 250px */
 }
 
 .v-thumb {
@@ -1089,6 +1094,14 @@ body .stats-strip {
   height: 100%;
   object-fit: cover;
   transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Rotation Fix for incorrectly oriented videos */
+.rotate-fix {
+  transform: rotate(270deg) scale(1.5);
+}
+.video-item:hover .rotate-fix {
+  transform: rotate(270deg) scale(1.6);
 }
 
 .video-item:hover .v-thumb {

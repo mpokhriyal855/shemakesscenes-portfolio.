@@ -220,58 +220,50 @@
     </section>
 
     <!-- ══════════════════════════════════
-         CASE STUDIES — Horizontal Swipe
+         VIDEO GALLERY (Masonry & Lightbox)
     ══════════════════════════════════ -->
-    <section class="portfolio-strip">
+    <section class="video-gallery" id="portfolio">
         <div class="port-header reveal-up">
             <h2 class="section-title">The <span class="highlight">Receipts.</span></h2>
-            <p class="section-subtitle">Swipe through some of my favorite campaigns.</p>
+            <p class="section-subtitle">Aesthetic content that actually converts.</p>
         </div>
 
-        <div class="port-track-wrapper reveal-up delay-2">
-            <div class="port-track">
-                <!-- Case 1 -->
-                <div class="port-card">
-                    <img src="assets/feed_1.png" alt="Glow Skincare" class="port-img">
-                    <div class="port-overlay">
-                        <div class="port-meta">
-                            <h4>Glow Skincare</h4>
-                            <p>Brand Launch • 1.2M Reach</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Case 2 -->
-                <div class="port-card">
-                    <img src="assets/feed_2.png" alt="Aura Activewear" class="port-img">
-                    <div class="port-overlay">
-                        <div class="port-meta">
-                            <h4>Aura Activewear</h4>
-                            <p>UGC Campaign • +300% ROI</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Case 3 -->
-                <div class="port-card">
-                    <img src="assets/feed_3.png" alt="Matcha Moments" class="port-img">
-                    <div class="port-overlay">
-                        <div class="port-meta">
-                            <h4>Matcha Moments</h4>
-                            <p>Social Strategy • +50k Followers</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Case 4 -->
-                <div class="port-card">
-                    <img src="assets/feed_4.png" alt="Lumiere Beauty" class="port-img">
-                    <div class="port-overlay">
-                        <div class="port-meta">
-                            <h4>Lumiere Beauty</h4>
-                            <p>Content Production</p>
-                        </div>
-                    </div>
+        <div class="video-grid reveal-up delay-2">
+            <!-- Video Item 1 (Vertical) -->
+            <div class="video-item vertical" data-video="https://www.w3schools.com/html/mov_bbb.mp4">
+                <img src="assets/feed_1.png" alt="Video thumbnail" class="v-thumb">
+                <div class="v-overlay">
+                    <p class="v-text">Reached 100k+ on YouTube</p>
+                    <div class="play-btn">▶</div>
                 </div>
             </div>
-            <div class="swipe-hint">← Swipe to explore →</div>
+
+            <!-- Video Item 2 (Square) -->
+            <div class="video-item square" data-video="https://www.w3schools.com/html/mov_bbb.mp4">
+                <img src="assets/feed_2.png" alt="Video thumbnail" class="v-thumb">
+                <div class="v-overlay">
+                    <p class="v-text">UGC Campaign • +300% ROI</p>
+                    <div class="play-btn">▶</div>
+                </div>
+            </div>
+
+            <!-- Video Item 3 (Vertical) -->
+            <div class="video-item vertical" data-video="https://www.w3schools.com/html/mov_bbb.mp4">
+                <img src="assets/feed_3.png" alt="Video thumbnail" class="v-thumb">
+                <div class="v-overlay">
+                    <p class="v-text">Viral TikTok • 5M Views</p>
+                    <div class="play-btn">▶</div>
+                </div>
+            </div>
+
+            <!-- Video Item 4 (Square) -->
+            <div class="video-item square" data-video="https://www.w3schools.com/html/mov_bbb.mp4">
+                <img src="assets/feed_1.png" alt="Video thumbnail" class="v-thumb">
+                <div class="v-overlay">
+                    <p class="v-text">Brand Launch Strategy</p>
+                    <div class="play-btn">▶</div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -323,7 +315,20 @@
             <p>© 2024 She Makes Scenes. All rights reserved.</p>
         </div>
     </footer>
+        <!-- ══════════════════════════════════
+         VIDEO LIGHTBOX MODAL
+    ══════════════════════════════════ -->
+    <div class="video-modal" id="videoModal">
+        <button class="modal-close" id="modalClose">✕</button>
+        <div class="modal-content">
+            <video id="modalVideo" controls playsinline>
+                <source src="" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
 
+    <!-- MAIN SCRIPT -->
     <script src="script.js"></script>
 </body>
 

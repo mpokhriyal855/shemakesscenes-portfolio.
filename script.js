@@ -188,6 +188,52 @@ document.addEventListener('DOMContentLoaded', () => {
       const yd = (e.clientY / window.innerHeight - 0.5) * -14;
       heroCamera.style.transform = `translate(${xd}px, ${yd}px)`;
     }
-  });
+  // ──────────────────────────────
+  // 7. VIDEO LIGHTBOX MODAL
+  // ──────────────────────────────
+  const videoItems = document.querySelectorAll('.video-item');
+  const videoModal = document.getElementById('videoModal');
+  const modalVideo = document.getElementById('modalVideo');
+  const modalClose = document.getElementById('modalClose');
+
+  if (videoItems.length > 0 && videoModal && modalVideo) {
+    videoItems.forEach(item => {
+      item.addEventListener('click', () => {
+        const videoSrc = item.getAttribute('data-video');
+        if (videoSrc) {
+          modalVideo.src = videoSrc;
+          modalVideo.currentTime = 0;
+          document.body.classList.add('modal-open');
+          videoModal.classList.add('active');
+          modalVideo.play();
+        }
+      });
+    });
+
+    const closeModal = () => {
+      document.body.classList.remove('modal-open');
+      videoModal.classList.remove('active');
+      modalVideo.pause();
+      modalVideo.src = ""; // Stop buffering
+    };
+
+    if (modalClose) {
+      modalClose.addEventListener('click', closeModal);
+    }
+
+    // Close on background click
+    videoModal.addEventListener('click', (e) => {
+      if (e.target === videoModal) {
+        closeModal();
+      }
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && videoModal.classList.contains('active')) {
+        closeModal();
+      }
+    });
+  }
 
 });

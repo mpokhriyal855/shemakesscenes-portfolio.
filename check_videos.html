@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h1>Video Dimensions</h1>
+  <div id="output"></div>
+  <script>
+    const videos = ['assets/v1.mov', 'assets/v2.mp4', 'assets/v3.mp4', 'assets/v4.mp4', 'assets/v5.mp4', 'assets/v6.mp4'];
+    const output = document.getElementById('output');
+
+    videos.forEach(src => {
+      const vid = document.createElement('video');
+      vid.src = src;
+      vid.onloadedmetadata = () => {
+        const div = document.createElement('div');
+        div.textContent = `${src} - Width: ${vid.videoWidth}, Height: ${vid.videoHeight}`;
+        output.appendChild(div);
+      };
+    });
+  </script>
+</body>
+</html>

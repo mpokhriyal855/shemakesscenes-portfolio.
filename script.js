@@ -191,6 +191,36 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ──────────────────────────────
+  // 6.5 VIDEO THUMBNAILS (Autoplay on scroll & 8s loop)
+  // ──────────────────────────────
+  const thumbVideos = document.querySelectorAll('.v-thumb');
+  
+  if (thumbVideos.length > 0) {
+    const videoObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const vid = entry.target;
+        if (entry.isIntersecting) {
+          vid.play().catch(e => console.log("Autoplay prevented by browser:", e));
+        } else {
+          vid.pause();
+        }
+      });
+    }, { threshold: 0.2 });
+
+    thumbVideos.forEach(vid => {
+      videoObserver.observe(vid);
+
+      // Loop video back to 0 if it exceeds 8 seconds
+      vid.addEventListener('timeupdate', () => {
+        if (vid.currentTime >= 8) {
+          vid.currentTime = 0;
+          vid.play();
+        }
+      });
+    });
+  }
+
+  // ──────────────────────────────
   // 7. VIDEO LIGHTBOX MODAL
   // ──────────────────────────────
   const videoItems = document.querySelectorAll('.video-item');

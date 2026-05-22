@@ -239,6 +239,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const videoSrc = item.getAttribute('data-video');
         if (videoSrc) {
           modalVideo.src = videoSrc;
+          let posterName = videoSrc.split('/').pop().split('.')[0];
+          modalVideo.poster = 'assets/poster_' + posterName + '.jpg';
           modalVideo.currentTime = 0;
           document.body.classList.add('modal-open');
           videoModal.classList.add('active');

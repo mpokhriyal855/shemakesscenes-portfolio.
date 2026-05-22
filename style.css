@@ -342,140 +342,157 @@ button,
 
 /* ===========================
    ABOUT STRIP
+/* ===========================
+   ABOUT ME SECTION
    =========================== */
-.about-strip {
+.about-me {
   padding: 100px 6%;
   background: var(--cream);
   color: var(--dark);
-  position: relative;
-  overflow: hidden;
 }
 
-.about-strip::before {
-  content: 'ABOUT';
-  position: absolute;
-  font-family: var(--font-block);
-  font-size: clamp(6rem, 18vw, 16rem);
-  color: rgba(0, 0, 0, 0.04);
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  white-space: nowrap;
-  pointer-events: none;
-  letter-spacing: 0.1em;
-}
-
-.about-grid {
+.about-container {
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1.3fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 60px;
   align-items: center;
 }
 
-.about-eyebrow {
-  font-family: var(--font-body);
-  font-size: 0.75rem;
-  letter-spacing: 0.4em;
-  text-transform: uppercase;
-  color: var(--hot-pink);
-  font-weight: 600;
-  margin-bottom: 16px;
+.about-image {
+  display: flex;
+  justify-content: center;
+  position: relative;
 }
 
-.about-title {
-  font-family: var(--font-serif);
-  font-size: clamp(2.2rem, 4.5vw, 4rem);
-  line-height: 1.15;
-  margin-bottom: 24px;
+.about-portrait {
+  width: 100%;
+  max-width: 450px;
+  object-fit: cover;
+  filter: contrast(1.05) saturate(0.95) drop-shadow(0 20px 40px rgba(0,0,0,0.1));
 }
 
-.about-title em {
-  color: var(--hot-pink);
-  font-style: italic;
+.about-content {
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
 }
 
-.about-title .highlight {
-  background: var(--lime);
+.about-heading {
+  font-family: var(--font-block);
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  letter-spacing: 0.05em;
+  margin-bottom: -5px;
   color: var(--dark);
-  padding: 2px 10px;
-  border-radius: 6px;
-  font-style: normal;
-  display: inline-block;
 }
 
-.about-body {
-  font-size: clamp(1rem, 1.5vw, 1.15rem);
+.about-subheading {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  color: #777;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+
+.about-text {
+  font-family: var(--font-body);
+  font-size: clamp(0.9rem, 1.2vw, 1.05rem);
   line-height: 1.7;
-  color: rgba(14, 0, 8, 0.65);
-  margin-bottom: 32px;
+  color: rgba(44, 43, 41, 0.8);
+  margin-bottom: 20px;
   max-width: 500px;
 }
 
-.cta-link {
-  display: inline-block;
-  font-weight: 700;
+.about-connect {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.about-connect h4 {
+  font-family: var(--font-block);
+  font-size: 1.8rem;
+  letter-spacing: 0.05em;
+  margin-bottom: 15px;
+}
+
+.contact-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contact-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.contact-row svg {
+  width: 18px;
+  height: 18px;
+  stroke: var(--dark);
+}
+
+.contact-row a {
+  font-family: var(--font-body);
   font-size: 0.95rem;
   color: var(--dark);
   text-decoration: none;
-  border-bottom: 2px solid var(--hot-pink);
-  padding-bottom: 3px;
-  letter-spacing: 0.05em;
-  transition: color 0.2s, border-color 0.2s;
+  font-weight: 500;
+  transition: color 0.3s;
 }
 
-.cta-link:hover {
+.contact-row a:hover {
   color: var(--hot-pink);
 }
 
-.about-polaroid {
-  position: relative;
+.about-socials {
   display: flex;
-  justify-content: center;
+  gap: 16px;
+  align-self: flex-end;
+  margin-top: -20px;
+}
+
+.about-socials a {
+  color: var(--dark);
+  transition: transform 0.3s, color 0.3s;
+  display: flex;
   align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.04);
 }
 
-.polaroid-wrapper {
-  background: #fff;
-  padding: 14px 14px 50px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-  transform: rotate(-3deg);
-  max-width: 260px;
-  position: relative;
-  z-index: 2;
+.about-socials a:hover {
+  color: var(--hot-pink);
+  transform: translateY(-3px);
+  background: rgba(0,0,0,0.08);
 }
 
-.polaroid-wrapper img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  display: block;
-}
-
-.polaroid-caption {
-  text-align: center;
-  font-family: var(--font-body);
-  font-size: 0.85rem;
-  color: #555;
-  margin-top: 10px;
-  padding-bottom: 4px;
-}
-
-.handbag-float {
-  position: absolute;
-  bottom: -20px;
-  right: -10px;
-  width: 120px;
-  z-index: 3;
-}
-
-.handbag-float img {
-  width: 100%;
-}
-
-.float-bob {
-  animation: bobUp 4s ease-in-out infinite alternate;
+@media (max-width: 900px) {
+  .about-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 40px;
+  }
+  .about-content {
+    padding-left: 0;
+    align-items: center;
+  }
+  .about-text {
+    text-align: center;
+  }
+  .contact-row {
+    justify-content: center;
+  }
+  .about-socials {
+    align-self: center;
+    margin-top: 20px;
+  }
 }
 
 .float-bob-alt {

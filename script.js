@@ -200,6 +200,11 @@ document.addEventListener('DOMContentLoaded', () => {
       entries.forEach(entry => {
         const vid = entry.target;
         if (entry.isIntersecting) {
+          // TRUE LAZY LOADING: Only assign the source if it hasn't been assigned yet.
+          if (!vid.getAttribute('src')) {
+            vid.setAttribute('src', vid.getAttribute('data-src'));
+            vid.load();
+          }
           vid.play().catch(e => console.log("Autoplay prevented by browser:", e));
         } else {
           vid.pause();

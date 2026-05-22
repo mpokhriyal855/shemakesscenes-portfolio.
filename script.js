@@ -188,6 +188,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const yd = (e.clientY / window.innerHeight - 0.5) * -14;
       heroCamera.style.transform = `translate(${xd}px, ${yd}px)`;
     }
+  });
+
   // ──────────────────────────────
   // 7. VIDEO LIGHTBOX MODAL
   // ──────────────────────────────

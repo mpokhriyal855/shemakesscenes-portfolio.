@@ -2034,48 +2034,53 @@ body.modal-open > *:not(.video-modal) {
    =========================== */
 .sd-section {
   background: #0d0d1a;
-  padding: 60px 0 80px;
+  padding: 80px 0 120px;
   overflow: hidden;
 }
 
-/* ── Diagonal label (small, bottom-left area, italic) ── */
+/* ── Diagonal label (Oversized, centered, elegant bold serif font) ── */
 .sd-label-wrap {
-  padding: 40px 60px 20px;
-  overflow: hidden;
-  pointer-events: none;
+  text-align: center;
+  padding: 80px 20px 60px;
+  position: relative;
+  z-index: 10;
 }
 
 .sd-label-text {
   display: inline-block;
   font-family: 'DM Serif Display', serif;
-  font-style: italic;
-  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 700;
+  font-size: clamp(3.5rem, 8vw, 8.5rem);
   color: #f5f0e8;
-  letter-spacing: 0.05em;
-  transform: rotate(-12deg) translateX(10px);
-  transform-origin: left center;
-  line-height: 1;
-  opacity: 0.92;
+  letter-spacing: -0.01em;
+  transform: rotate(-8deg);
+  line-height: 0.95;
+  opacity: 0.95;
+  text-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
 }
 
-/* ── Cascade clip container — zero gap, stacked directly ── */
+/* ── Cascade clip container — close vertical overlap, visible overflow ── */
 .sd-cascade-clip {
-  overflow: hidden;
-  /* Height is determined purely by the rotated inner content */
+  overflow: visible; /* Allows glowing outlines & hovered scaling to overflow rows nicely */
   padding: 0;
   margin: 0;
-  /* Each clip provides just enough vertical room for the phones */
-  height: clamp(200px, 28vw, 380px);
+  height: clamp(140px, 20vw, 280px);
+  margin-top: -45px; /* Overlap naturally with negative margins */
   position: relative;
 }
+
+/* Stagger z-indices so later rows overlay previous ones in cascade order */
+.sd-cascade-clip:nth-of-type(1) { z-index: 1; }
+.sd-cascade-clip:nth-of-type(2) { z-index: 2; }
+.sd-cascade-clip:nth-of-type(3) { z-index: 3; }
+.sd-cascade-clip:nth-of-type(4) { z-index: 4; }
+.sd-cascade-clip:nth-of-type(5) { z-index: 5; }
 
 /* ── Cascade row: the full row is rotated as one unit ── */
 .sd-cascade {
   display: flex;
   align-items: center;
   gap: 0;
-  /* Rotate the whole row at -12deg */
-  transform: rotate(-12deg);
   /* Stretch far wider than viewport so phones fill edge-to-edge after rotation */
   width: 160%;
   /* Shift left so the rotated row is centred */
@@ -2090,11 +2095,17 @@ body.modal-open > *:not(.video-modal) {
 /* ── Individual phone units ── */
 .sd-phone {
   flex: 0 0 auto;
-  /* Wide enough that 9 of them fill the 160% container */
   width: clamp(140px, 17vw, 220px);
-  /* 1px gap between phones */
-  margin-right: 1px;
+  margin-right: 2px; /* Tight edge-to-edge spacing */
   flex-shrink: 0;
+  position: relative;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), z-index 0.4s;
+  z-index: 2;
+}
+
+.sd-phone:hover {
+  transform: scale(1.06) translateY(-8px);
+  z-index: 20 !important;
 }
 
 .sd-pframe {
@@ -2136,6 +2147,7 @@ body.modal-open > *:not(.video-modal) {
 @media (max-width: 900px) {
   .sd-cascade-clip {
     height: clamp(160px, 32vw, 300px);
+    margin-top: -30px;
   }
   .sd-phone {
     width: clamp(120px, 19vw, 180px);
@@ -2148,10 +2160,11 @@ body.modal-open > *:not(.video-modal) {
 
 @media (max-width: 600px) {
   .sd-label-text {
-    font-size: clamp(1.6rem, 8vw, 2.5rem);
+    font-size: clamp(2.5rem, 12vw, 4.5rem);
   }
   .sd-cascade-clip {
     height: clamp(140px, 42vw, 240px);
+    margin-top: -20px;
   }
   .sd-phone {
     width: clamp(100px, 23vw, 150px);
@@ -2160,3 +2173,25 @@ body.modal-open > *:not(.video-modal) {
     width: 200%;
     margin-left: -50%;
   }
+}
+
+/* ── Highlighted phone styles (glowing white border/outline) ── */
+.sd-phone--highlighted {
+  z-index: 8;
+}
+
+.sd-phone--highlighted .sd-pframe {
+  outline: 3px solid #ffffff;
+  outline-offset: -1px;
+  box-shadow:
+    0 0 30px rgba(255, 255, 255, 0.9),
+    0 20px 50px rgba(0, 0, 0, 0.8),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  transform: scale(1.03);
+}
+
+.sd-phone--highlighted:hover .sd-pframe {
+  box-shadow:
+    0 0 45px rgba(255, 255, 255, 1),
+    0 25px 60px rgba(0, 0, 0, 0.9);
+}

@@ -1645,7 +1645,9 @@ body.modal-open > *:not(.video-modal) {
 
 /* ── Instagram Carousel ── */
 .insta-carousel {
-  flex: 1;
+  flex: none;
+  width: 100%;
+  aspect-ratio: 3/4; /* Changed to portrait aspect ratio */
   position: relative;
   overflow: hidden;
   background: #000;

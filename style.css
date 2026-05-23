@@ -2034,14 +2034,14 @@ body.modal-open > *:not(.video-modal) {
    =========================== */
 .sd-section {
   background: #0d0d1a;
-  padding: 80px 0 120px;
+  padding: 10px 0 60px; /* Reduced padding-top to minimize the distance to the social media section */
   overflow: hidden;
 }
 
 /* ── Diagonal label (Oversized, centered, elegant bold serif font) ── */
 .sd-label-wrap {
   text-align: center;
-  padding: 80px 20px 60px;
+  padding: 10px 20px 20px; /* Minimized vertical margins to keep spacing tight */
   position: relative;
   z-index: 10;
 }
@@ -2053,7 +2053,7 @@ body.modal-open > *:not(.video-modal) {
   font-size: clamp(3.5rem, 8vw, 8.5rem);
   color: #f5f0e8;
   letter-spacing: -0.01em;
-  transform: rotate(-8deg);
+  transform: rotate(-12deg); /* Rotated to the exact same -12deg angle as the phones */
   line-height: 0.95;
   opacity: 0.95;
   text-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
@@ -2064,7 +2064,7 @@ body.modal-open > *:not(.video-modal) {
   overflow: visible; /* Allows glowing outlines & hovered scaling to overflow rows nicely */
   padding: 0;
   margin: 15px 0;
-  height: clamp(310px, 38vw, 490px); /* Height adjusted to completely contain phones without overlap */
+  height: clamp(440px, 52vw, 700px); /* Taller container to fit the newly enlarged phones */
   position: relative;
 }
 
@@ -2080,10 +2080,10 @@ body.modal-open > *:not(.video-modal) {
   display: flex;
   align-items: center;
   gap: 0;
-  /* Stretch far wider than viewport so phones fill edge-to-edge after rotation */
-  width: 160%;
-  /* Shift left so the rotated row is centred */
-  margin-left: -30%;
+  /* Stretch wider than viewport so 5 phones fill edge-to-edge after rotation */
+  width: 130%;
+  /* Shift left so the rotated row is centered */
+  margin-left: -15%;
   /* Vertically centre inside the clip */
   position: absolute;
   top: 50%;
@@ -2091,10 +2091,10 @@ body.modal-open > *:not(.video-modal) {
   transform: translateY(-50%) rotate(-12deg);
 }
 
-/* ── Individual phone units ── */
+/* ── Individual phone units (enlarged) ── */
 .sd-phone {
   flex: 0 0 auto;
-  width: clamp(140px, 17vw, 220px);
+  width: clamp(200px, 23vw, 320px); /* Larger phone frames */
   margin-right: 2px; /* Tight edge-to-edge spacing */
   flex-shrink: 0;
   position: relative;
@@ -2145,15 +2145,15 @@ body.modal-open > *:not(.video-modal) {
 
 @media (max-width: 900px) {
   .sd-cascade-clip {
-    height: clamp(260px, 41vw, 390px);
+    height: clamp(350px, 54vw, 480px);
     margin: 10px 0;
   }
   .sd-phone {
-    width: clamp(120px, 19vw, 180px);
+    width: clamp(160px, 25vw, 220px);
   }
   .sd-cascade {
-    width: 180%;
-    margin-left: -40%;
+    width: 150%;
+    margin-left: -25%;
   }
 }
 
@@ -2162,15 +2162,15 @@ body.modal-open > *:not(.video-modal) {
     font-size: clamp(2.5rem, 12vw, 4.5rem);
   }
   .sd-cascade-clip {
-    height: clamp(216px, 49vw, 325px);
+    height: clamp(285px, 61vw, 395px);
     margin: 8px 0;
   }
   .sd-phone {
-    width: clamp(100px, 23vw, 150px);
+    width: clamp(130px, 28vw, 180px);
   }
   .sd-cascade {
-    width: 200%;
-    margin-left: -50%;
+    width: 160%;
+    margin-left: -30%;
   }
 }
 

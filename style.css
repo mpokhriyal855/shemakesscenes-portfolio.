@@ -2041,7 +2041,7 @@ body.modal-open > *:not(.video-modal) {
 /* ── Diagonal label (Oversized, aligned to 2nd phone start, elegant serif) ── */
 .sd-label-wrap {
   text-align: left;
-  padding: 10px 20px 20px;
+  padding: 60px 20px 20px; /* Increased padding-top to give rotated text room to rise without cutting */
   position: relative;
   z-index: 10;
   /* Shifts the starting position to where the second phone in the row begins */
@@ -2052,22 +2052,23 @@ body.modal-open > *:not(.video-modal) {
   display: inline-flex;
   align-items: center;
   gap: 15px;
-  font-family: 'DM Serif Display', serif;
+  font-family: var(--font-block); /* Changed font to brand sans-serif */
   font-weight: 700;
-  font-size: clamp(2rem, 4.5vw, 4.5rem); /* Reduced size to prevent text overflow and cutting */
+  font-size: clamp(1.8rem, 4vw, 3.2rem); /* Reduced size to prevent overflow */
   color: #f5f0e8;
-  letter-spacing: -0.01em;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
   transform: rotate(-12deg); /* Same -12deg angle as the phones */
   transform-origin: left center; /* Pivot left to align perfectly on the start line */
-  line-height: 0.95;
+  line-height: 1;
   opacity: 0.95;
-  text-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
 }
 
 .sd-label-text::after {
   content: '';
   display: inline-block;
-  width: clamp(40px, 6vw, 100px); /* Small diagonal line */
+  width: clamp(30px, 4vw, 70px); /* Small diagonal line ornament */
   height: 2px;
   background-color: #f5f0e8;
   opacity: 0.8;
@@ -2160,6 +2161,7 @@ body.modal-open > *:not(.video-modal) {
 @media (max-width: 900px) {
   .sd-label-wrap {
     margin-left: clamp(90px, 8vw, 160px);
+    padding: 45px 20px 20px; /* Adjusted padding-top to keep rotated text visible */
   }
   .sd-cascade-clip {
     height: clamp(350px, 54vw, 480px);
@@ -2177,9 +2179,10 @@ body.modal-open > *:not(.video-modal) {
 @media (max-width: 600px) {
   .sd-label-wrap {
     margin-left: clamp(40px, 6vw, 100px);
+    padding: 35px 20px 20px; /* Adjusted padding-top for mobile text height */
   }
   .sd-label-text {
-    font-size: clamp(1.8rem, 8vw, 3rem);
+    font-size: clamp(1.6rem, 7.5vw, 2.5rem);
   }
   .sd-cascade-clip {
     height: clamp(285px, 61vw, 395px);

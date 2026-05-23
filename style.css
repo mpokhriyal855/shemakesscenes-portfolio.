@@ -2049,10 +2049,12 @@ body.modal-open > *:not(.video-modal) {
 }
 
 .sd-label-text {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
   font-family: 'DM Serif Display', serif;
   font-weight: 700;
-  font-size: clamp(3.5rem, 8vw, 8.5rem);
+  font-size: clamp(2rem, 4.5vw, 4.5rem); /* Reduced size to prevent text overflow and cutting */
   color: #f5f0e8;
   letter-spacing: -0.01em;
   transform: rotate(-12deg); /* Same -12deg angle as the phones */
@@ -2060,6 +2062,15 @@ body.modal-open > *:not(.video-modal) {
   line-height: 0.95;
   opacity: 0.95;
   text-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+.sd-label-text::after {
+  content: '';
+  display: inline-block;
+  width: clamp(40px, 6vw, 100px); /* Small diagonal line */
+  height: 2px;
+  background-color: #f5f0e8;
+  opacity: 0.8;
 }
 
 /* ── Cascade clip container — close vertical overlap, visible overflow ── */
@@ -2168,7 +2179,7 @@ body.modal-open > *:not(.video-modal) {
     margin-left: clamp(40px, 6vw, 100px);
   }
   .sd-label-text {
-    font-size: clamp(2.5rem, 12vw, 4.5rem);
+    font-size: clamp(1.8rem, 8vw, 3rem);
   }
   .sd-cascade-clip {
     height: clamp(285px, 61vw, 395px);

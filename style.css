@@ -1461,7 +1461,7 @@ body.modal-open > *:not(.video-modal) {
 
 .post-design-header {
   text-align: center;
-  margin-bottom: 72px;
+  margin-bottom: 40px;
   padding: 0 24px;
 }
 
@@ -1491,9 +1491,9 @@ body.modal-open > *:not(.video-modal) {
 .post-row {
   display: flex;
   align-items: center;
-  gap: 18px;
-  padding: 24px 48px;
-  margin-bottom: 12px;
+  gap: 12px;
+  padding: 8px 48px;
+  margin-bottom: 0px;
 }
 
 /* Row variant: 4 images then phone */

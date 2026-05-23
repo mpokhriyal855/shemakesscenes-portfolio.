@@ -2034,78 +2034,78 @@ body.modal-open > *:not(.video-modal) {
    =========================== */
 .sd-section {
   background: #0d0d1a;
-  padding: 80px 0 120px;
+  padding: 60px 0 80px;
   overflow: hidden;
 }
 
-/* ── Diagonal title band ── */
-.sd-title-band {
-  position: relative;
-  overflow: visible;
-  padding: 80px 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* The pink glowing stripe behind the text */
-.sd-title-band::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(232, 180, 200, 0.05);
-  transform: rotate(-8deg) scaleX(1.5);
+/* ── Diagonal label (small, bottom-left area, italic) ── */
+.sd-label-wrap {
+  padding: 40px 60px 20px;
+  overflow: hidden;
   pointer-events: none;
 }
 
-.sd-title-text {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(5rem, 14vw, 14rem);
+.sd-label-text {
+  display: inline-block;
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: clamp(2rem, 4vw, 3.5rem);
   color: #f5f0e8;
-  letter-spacing: 0.06em;
-  white-space: nowrap;
-  transform: rotate(-8deg);
+  letter-spacing: 0.05em;
+  transform: rotate(-12deg) translateX(10px);
+  transform-origin: left center;
   line-height: 1;
-  position: relative;
-  z-index: 1;
-  /* Hollow / outline style on alternating */
-  -webkit-text-stroke: 1px rgba(232, 180, 200, 0.25);
+  opacity: 0.92;
 }
 
-/* ── Cascade clip container ── */
+/* ── Cascade clip container — zero gap, stacked directly ── */
 .sd-cascade-clip {
   overflow: hidden;
-  padding: 60px 0;
+  /* Height is determined purely by the rotated inner content */
+  padding: 0;
+  margin: 0;
+  /* Each clip provides just enough vertical room for the phones */
+  height: clamp(200px, 28vw, 380px);
   position: relative;
 }
 
-/* ── Cascade row (the whole flex row is rotated) ── */
+/* ── Cascade row: the full row is rotated as one unit ── */
 .sd-cascade {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   gap: 0;
-  transform: rotate(-12deg) translateX(-8%);
-  width: 130%;
-  margin-left: -15%;
-  position: relative;
+  /* Rotate the whole row at -12deg */
+  transform: rotate(-12deg);
+  /* Stretch far wider than viewport so phones fill edge-to-edge after rotation */
+  width: 160%;
+  /* Shift left so the rotated row is centred */
+  margin-left: -30%;
+  /* Vertically centre inside the clip */
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%) rotate(-12deg);
 }
 
 /* ── Individual phone units ── */
 .sd-phone {
   flex: 0 0 auto;
-  width: clamp(160px, 19vw, 250px);
-  margin-right: -2px; /* near-zero gap */
+  /* Wide enough that 9 of them fill the 160% container */
+  width: clamp(140px, 17vw, 220px);
+  /* 1px gap between phones */
+  margin-right: 1px;
+  flex-shrink: 0;
 }
 
 .sd-pframe {
   width: 100%;
   aspect-ratio: 9 / 19.5;
   background: linear-gradient(165deg, #2a2a3a 0%, #1a1a28 100%);
-  border-radius: 30px;
+  border-radius: 28px;
   border: 2px solid rgba(255, 255, 255, 0.1);
   box-shadow:
-    0 20px 50px rgba(0, 0, 0, 0.7),
-    0 0 25px rgba(232, 180, 200, 0.06),
+    0 16px 40px rgba(0, 0, 0, 0.7),
+    0 0 20px rgba(232, 180, 200, 0.05),
     inset 0 1px 0 rgba(255, 255, 255, 0.07);
   padding: 10px 7px 14px;
   display: flex;
@@ -2116,11 +2116,11 @@ body.modal-open > *:not(.video-modal) {
 
 .sd-pnotch {
   position: absolute;
-  top: 8px;
+  top: 7px;
   left: 50%;
   transform: translateX(-50%);
-  width: 40px;
-  height: 6px;
+  width: 38px;
+  height: 5px;
   background: #0d0d1a;
   border-radius: 4px;
   z-index: 10;
@@ -2128,45 +2128,35 @@ body.modal-open > *:not(.video-modal) {
 
 .sd-pscreen {
   flex: 1;
-  border-radius: 20px;
+  border-radius: 18px;
   margin-top: 6px;
   overflow: hidden;
 }
 
-/* ── 2-image pair row ── */
-.sd-pair {
-  display: flex;
-  gap: 2px;
-  padding: 0 48px;
-  margin-bottom: 0;
-}
-
-.sd-pair-img {
-  flex: 1;
-  aspect-ratio: 16/7;
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,0.06);
-}
-
 @media (max-width: 900px) {
-  .sd-cascade {
-    transform: rotate(-10deg) translateX(-5%);
-    width: 140%;
-    margin-left: -20%;
+  .sd-cascade-clip {
+    height: clamp(160px, 32vw, 300px);
   }
-  .sd-pair {
-    padding: 0 20px;
+  .sd-phone {
+    width: clamp(120px, 19vw, 180px);
+  }
+  .sd-cascade {
+    width: 180%;
+    margin-left: -40%;
   }
 }
 
 @media (max-width: 600px) {
-  .sd-title-text {
-    font-size: clamp(3rem, 18vw, 6rem);
+  .sd-label-text {
+    font-size: clamp(1.6rem, 8vw, 2.5rem);
+  }
+  .sd-cascade-clip {
+    height: clamp(140px, 42vw, 240px);
   }
   .sd-phone {
-    width: clamp(100px, 22vw, 160px);
+    width: clamp(100px, 23vw, 150px);
   }
-  .sd-pair-img {
-    aspect-ratio: 4/3;
+  .sd-cascade {
+    width: 200%;
+    margin-left: -50%;
   }
-}

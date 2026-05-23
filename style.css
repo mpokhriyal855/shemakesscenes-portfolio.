@@ -1487,13 +1487,12 @@ body.modal-open > *:not(.video-modal) {
   letter-spacing: 0.04em;
 }
 
-/* ── Post Rows ── */
 .post-row {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 2px;
   padding: 0 48px;
-  margin-bottom: 8px;
+  margin-bottom: 2px;
   position: relative;
 }
 

@@ -1491,9 +1491,9 @@ body.modal-open > *:not(.video-modal) {
 .post-row {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 8px 48px;
-  margin-bottom: 0px;
+  gap: 8px;
+  padding: 0 48px;
+  margin-bottom: 8px;
 }
 
 /* Row variant: 4 images then phone */

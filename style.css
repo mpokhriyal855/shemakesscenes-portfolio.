@@ -1494,6 +1494,11 @@ body.modal-open > *:not(.video-modal) {
   gap: 8px;
   padding: 0 48px;
   margin-bottom: 8px;
+  position: relative;
+}
+
+.post-row + .post-row {
+  margin-top: -120px;
 }
 
 /* Row variant: 4 images then phone */
@@ -1767,6 +1772,10 @@ body.modal-open > *:not(.video-modal) {
   .post-row--4-phone,
   .post-row--phone-4 {
     flex-wrap: wrap;
+  }
+
+  .post-row + .post-row {
+    margin-top: 8px; /* Remove heavy overlap on mobile */
   }
 
   .post-thumb {

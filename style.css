@@ -2038,12 +2038,14 @@ body.modal-open > *:not(.video-modal) {
   overflow: hidden;
 }
 
-/* ── Diagonal label (Oversized, centered, elegant bold serif font) ── */
+/* ── Diagonal label (Oversized, aligned to 2nd phone start, elegant serif) ── */
 .sd-label-wrap {
-  text-align: center;
-  padding: 10px 20px 20px; /* Minimized vertical margins to keep spacing tight */
+  text-align: left;
+  padding: 10px 20px 20px;
   position: relative;
   z-index: 10;
+  /* Shifts the starting position to where the second phone in the row begins */
+  margin-left: clamp(140px, 8.5vw, 260px);
 }
 
 .sd-label-text {
@@ -2053,7 +2055,8 @@ body.modal-open > *:not(.video-modal) {
   font-size: clamp(3.5rem, 8vw, 8.5rem);
   color: #f5f0e8;
   letter-spacing: -0.01em;
-  transform: rotate(-12deg); /* Rotated to the exact same -12deg angle as the phones */
+  transform: rotate(-12deg); /* Same -12deg angle as the phones */
+  transform-origin: left center; /* Pivot left to align perfectly on the start line */
   line-height: 0.95;
   opacity: 0.95;
   text-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
@@ -2144,6 +2147,9 @@ body.modal-open > *:not(.video-modal) {
 }
 
 @media (max-width: 900px) {
+  .sd-label-wrap {
+    margin-left: clamp(90px, 8vw, 160px);
+  }
   .sd-cascade-clip {
     height: clamp(350px, 54vw, 480px);
     margin: 10px 0;
@@ -2158,6 +2164,9 @@ body.modal-open > *:not(.video-modal) {
 }
 
 @media (max-width: 600px) {
+  .sd-label-wrap {
+    margin-left: clamp(40px, 6vw, 100px);
+  }
   .sd-label-text {
     font-size: clamp(2.5rem, 12vw, 4.5rem);
   }
@@ -2174,9 +2183,9 @@ body.modal-open > *:not(.video-modal) {
   }
 }
 
-/* ── Highlighted phone styles (glowing white border/outline) ── */
+/* ── Highlighted phone styles (glowing white border/outline & slightly larger size) ── */
 .sd-phone--highlighted {
-  z-index: 8;
+  z-index: 8 !important;
 }
 
 .sd-phone--highlighted .sd-pframe {
@@ -2186,10 +2195,12 @@ body.modal-open > *:not(.video-modal) {
     0 0 30px rgba(255, 255, 255, 0.9),
     0 20px 50px rgba(0, 0, 0, 0.8),
     inset 0 1px 0 rgba(255, 255, 255, 0.25);
-  transform: scale(1.03);
+  transform: scale(1.15); /* Makes the highlighted phone stand out larger */
+  transform-origin: center center;
 }
 
 .sd-phone--highlighted:hover .sd-pframe {
+  transform: scale(1.2) translateY(-8px);
   box-shadow:
     0 0 45px rgba(255, 255, 255, 1),
     0 25px 60px rgba(0, 0, 0, 0.9);

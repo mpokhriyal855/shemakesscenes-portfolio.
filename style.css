@@ -1449,3 +1449,347 @@ body.modal-open > *:not(.video-modal) {
   color: rgba(255, 255, 255, 0.3);
   letter-spacing: 0.1em;
 }
+
+/* ===========================
+   SOCIAL MEDIA POST DESIGN SECTION
+   =========================== */
+.post-design-section {
+  background: #0d0d1a;
+  padding: 100px 0 120px;
+  overflow: hidden;
+}
+
+.post-design-header {
+  text-align: center;
+  margin-bottom: 72px;
+  padding: 0 24px;
+}
+
+.post-design-title {
+  font-family: 'Playfair Display', 'DM Serif Display', serif;
+  font-size: clamp(2.4rem, 6vw, 5.5rem);
+  font-weight: 700;
+  color: #f5f0e8;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+
+.post-highlight {
+  color: #e8b4c8;
+  font-style: italic;
+}
+
+.post-design-sub {
+  font-family: var(--font-body);
+  font-size: clamp(0.95rem, 1.8vw, 1.15rem);
+  color: rgba(245, 240, 232, 0.55);
+  letter-spacing: 0.04em;
+}
+
+/* ── Post Rows ── */
+.post-row {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 24px 48px;
+  margin-bottom: 12px;
+}
+
+/* Row variant: 4 images then phone */
+.post-row--4-phone {
+  flex-direction: row;
+}
+
+/* Row variant: phone then 4 images */
+.post-row--phone-4 {
+  flex-direction: row;
+}
+
+/* Row variant: 2 images · phone · 2 images */
+.post-row--2-phone-2 {
+  flex-direction: row;
+  justify-content: center;
+}
+
+/* ── Post Thumbnails (square/portrait ratio) ── */
+.post-thumb {
+  flex: 1;
+  min-width: 0;
+  aspect-ratio: 4/5;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.post-img-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(145deg, #1e1e30 0%, #2a2a3e 50%, #1a1a28 100%);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 14px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.post-img-placeholder::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    145deg,
+    rgba(232, 180, 200, 0.06) 0%,
+    rgba(176, 196, 222, 0.04) 50%,
+    transparent 100%
+  );
+  border-radius: 14px;
+}
+
+.post-img-placeholder::after {
+  content: '✦';
+  font-size: 1.5rem;
+  color: rgba(232, 180, 200, 0.2);
+}
+
+.post-thumb:hover .post-img-placeholder {
+  transform: scale(1.03);
+}
+
+/* ── Phone Mockup ── */
+.phone-mockup-wrap {
+  flex: 0 0 auto;
+  width: clamp(180px, 20vw, 260px);
+  position: relative;
+  z-index: 2;
+}
+
+.phone-frame {
+  width: 100%;
+  aspect-ratio: 9/19;
+  background: linear-gradient(160deg, #2a2a3a 0%, #1a1a28 100%);
+  border-radius: 38px;
+  border: 2.5px solid rgba(255, 255, 255, 0.12);
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.05),
+    0 30px 80px rgba(0, 0, 0, 0.7),
+    0 0 40px rgba(232, 180, 200, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  padding: 14px 10px 20px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Notch */
+.phone-frame::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 8px;
+  background: #111;
+  border-radius: 6px;
+  z-index: 10;
+}
+
+.phone-screen {
+  flex: 1;
+  border-radius: 26px;
+  overflow: hidden;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  margin-top: 8px;
+}
+
+/* ── Instagram Header inside phone ── */
+.insta-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 10px 6px;
+  background: #fff;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  flex-shrink: 0;
+}
+
+.insta-dot {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  flex-shrink: 0;
+}
+
+.insta-username {
+  font-family: var(--font-body);
+  font-size: 0.55rem;
+  font-weight: 600;
+  color: #111;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ── Instagram Carousel ── */
+.insta-carousel {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  background: #000;
+}
+
+.insta-slides {
+  display: flex;
+  height: 100%;
+  transition: transform 0.38s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform;
+}
+
+.insta-slide {
+  flex: 0 0 100%;
+  height: 100%;
+}
+
+.slide-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Prev / Next buttons */
+.insta-prev,
+.insta-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.85);
+  border: none;
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  font-size: 0.9rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  z-index: 5;
+  transition: opacity 0.2s, transform 0.2s;
+  opacity: 0.8;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+
+.insta-prev { left: 5px; }
+.insta-next { right: 5px; }
+
+.insta-prev:hover,
+.insta-next:hover {
+  opacity: 1;
+  transform: translateY(-50%) scale(1.1);
+}
+
+/* Dot indicators */
+.insta-dots {
+  position: absolute;
+  bottom: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 4px;
+  z-index: 5;
+}
+
+.insta-dots span {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  transition: background 0.3s, transform 0.3s;
+  display: block;
+}
+
+.insta-dots span.active {
+  background: #fff;
+  transform: scale(1.3);
+}
+
+/* ── Instagram Footer ── */
+.insta-footer {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 7px 10px;
+  background: #fff;
+  border-top: 1px solid rgba(0,0,0,0.06);
+  flex-shrink: 0;
+}
+
+.insta-heart {
+  font-size: 0.9rem;
+  color: #e0245e;
+}
+
+.insta-count {
+  font-family: var(--font-body);
+  font-size: 0.55rem;
+  font-weight: 700;
+  color: #111;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .post-row {
+    padding: 16px 20px;
+    gap: 12px;
+  }
+
+  .post-thumb {
+    aspect-ratio: 1/1;
+  }
+
+  .phone-mockup-wrap {
+    width: clamp(140px, 28vw, 200px);
+  }
+}
+
+@media (max-width: 600px) {
+  .post-row--4-phone,
+  .post-row--phone-4 {
+    flex-wrap: wrap;
+  }
+
+  .post-thumb {
+    flex: 0 0 calc(50% - 6px);
+    aspect-ratio: 1/1;
+  }
+
+  .phone-mockup-wrap {
+    order: -1;
+    width: 55%;
+    margin: 0 auto;
+  }
+
+  .post-row--phone-4 .phone-mockup-wrap {
+    order: 0;
+  }
+
+  .post-row--2-phone-2 {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .post-row--2-phone-2 .post-thumb {
+    flex: 0 0 calc(40% - 6px);
+  }
+}

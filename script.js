@@ -267,12 +267,57 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Close on Escape key
+      // Close on Escape key
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && videoModal.classList.contains('active')) {
         closeModal();
       }
     });
   }
+
+  // ──────────────────────────────
+  // 9. INSTAGRAM-STYLE PHONE CAROUSELS
+  // ──────────────────────────────
+  document.querySelectorAll('.insta-carousel').forEach(carousel => {
+    const slidesTrack = carousel.querySelector('.insta-slides');
+    const slides      = carousel.querySelectorAll('.insta-slide');
+    const dotsWrap    = carousel.querySelector('.insta-dots');
+    const prevBtn     = carousel.querySelector('.insta-prev');
+    const nextBtn     = carousel.querySelector('.insta-next');
+    const total       = slides.length;
+    let   current     = 0;
+
+    if (!slidesTrack || total === 0) return;
+
+    // Build dots (max 8 visible dots)
+    const maxDots = Math.min(total, 8);
+    for (let i = 0; i < maxDots; i++) {
+      const dot = document.createElement('span');
+      if (i === 0) dot.classList.add('active');
+      dotsWrap.appendChild(dot);
+    }
+
+    const dots = dotsWrap.querySelectorAll('span');
+
+    function goTo(idx) {
+      current = (idx + total) % total;
+      slidesTrack.style.transform = `translateX(-${current * 100}%)`;
+
+      // Update dots
+      const activeDot = Math.min(current, maxDots - 1);
+      dots.forEach((d, i) => d.classList.toggle('active', i === activeDot));
+    }
+
+    prevBtn.addEventListener('click', (e) => { e.stopPropagation(); goTo(current - 1); });
+    nextBtn.addEventListener('click', (e) => { e.stopPropagation(); goTo(current + 1); });
+
+    // Touch / swipe support
+    let touchStartX = 0;
+    carousel.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+    carousel.addEventListener('touchend', e => {
+      const diff = touchStartX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 30) goTo(diff > 0 ? current + 1 : current - 1);
+    });
+  });
 
 });

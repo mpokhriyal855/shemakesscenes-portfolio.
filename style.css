@@ -2063,9 +2063,8 @@ body.modal-open > *:not(.video-modal) {
 .sd-cascade-clip {
   overflow: visible; /* Allows glowing outlines & hovered scaling to overflow rows nicely */
   padding: 0;
-  margin: 0;
-  height: clamp(140px, 20vw, 280px);
-  margin-top: -45px; /* Overlap naturally with negative margins */
+  margin: 15px 0;
+  height: clamp(310px, 38vw, 490px); /* Height adjusted to completely contain phones without overlap */
   position: relative;
 }
 
@@ -2146,8 +2145,8 @@ body.modal-open > *:not(.video-modal) {
 
 @media (max-width: 900px) {
   .sd-cascade-clip {
-    height: clamp(160px, 32vw, 300px);
-    margin-top: -30px;
+    height: clamp(260px, 41vw, 390px);
+    margin: 10px 0;
   }
   .sd-phone {
     width: clamp(120px, 19vw, 180px);
@@ -2163,8 +2162,8 @@ body.modal-open > *:not(.video-modal) {
     font-size: clamp(2.5rem, 12vw, 4.5rem);
   }
   .sd-cascade-clip {
-    height: clamp(140px, 42vw, 240px);
-    margin-top: -20px;
+    height: clamp(216px, 49vw, 325px);
+    margin: 8px 0;
   }
   .sd-phone {
     width: clamp(100px, 23vw, 150px);

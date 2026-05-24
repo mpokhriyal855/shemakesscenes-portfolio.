@@ -1659,6 +1659,7 @@ body .stats-strip {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   grid-auto-rows: 250px;
+  grid-auto-flow: dense; /* Fill empty holes created by removed items */
   gap: 20px;
   max-width: 1200px;
   margin: 0 auto;

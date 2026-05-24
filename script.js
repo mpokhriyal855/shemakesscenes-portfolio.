@@ -240,7 +240,9 @@ document.addEventListener('DOMContentLoaded', () => {
         if (videoSrc) {
           modalVideo.src = videoSrc;
           let posterName = videoSrc.split('/').pop().split('.')[0];
-          modalVideo.poster = 'assets/poster_' + posterName + '.jpg';
+          const match = posterName.match(/^(v\d+)/);
+          const cleanPosterName = match ? match[1] : posterName;
+          modalVideo.poster = 'assets/poster_' + cleanPosterName + '.jpg';
           modalVideo.currentTime = 0;
           document.body.classList.add('modal-open');
           

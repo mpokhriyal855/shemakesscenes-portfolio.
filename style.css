@@ -1818,14 +1818,18 @@ body .stats-strip {
 
 /* Rotated video styling in modal */
 .video-modal.rotate-video .modal-content {
-  width: min(90vw, 142.22vh);
-  height: min(50.625vw, 80vh);
+  width: min(95vw, 168.89vh);
+  height: min(53.43vw, 95vh);
+  max-width: none !important;
+  max-height: none !important;
   aspect-ratio: 16 / 9;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  background: transparent;
+  box-shadow: none;
 }
 
 .video-modal.rotate-video #modalVideo {
@@ -1833,11 +1837,12 @@ body .stats-strip {
   top: 50% !important;
   left: 50% !important;
   transform: translate(-50%, -50%) rotate(270deg) !important;
-  width: min(80vh, 90vw * 9 / 16) !important;  /* Physical width (becomes visual height) */
-  height: min(142.22vh, 90vw) !important;      /* Physical height (becomes visual width) */
+  width: min(53.43vw, 95vh) !important;  /* Physical width (becomes visual height) */
+  height: min(95vw, 168.89vh) !important; /* Physical height (becomes visual width) */
   max-width: none !important;
   max-height: none !important;
   object-fit: contain !important;
+  background: transparent !important;
 }
 
 .modal-close {

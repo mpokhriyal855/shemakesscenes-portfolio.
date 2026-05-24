@@ -269,7 +269,7 @@ button,
   position: relative;
   z-index: 1;
   width: 100%;
-  height: 80vh; /* Make it a little small */
+  height: 65vh; /* Make it more short */
   object-fit: contain; /* Don't crop 11.png */
   object-position: center; /* Center it naturally over the grey circle */
   display: block;

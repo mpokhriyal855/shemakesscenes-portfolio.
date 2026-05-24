@@ -245,21 +245,38 @@ button,
 /* LEFT: full-height portrait */
 .am-portrait-col {
   position: relative;
-  overflow: hidden;
-  background: #f0ece8;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+/* The small grey circle behind the image */
+.am-portrait-col::before {
+  content: "";
+  position: absolute;
+  width: 35vw;
+  max-width: 350px;
+  height: 35vw;
+  max-height: 350px;
+  background: #e6e4e1;
+  border-radius: 50%;
+  z-index: 0;
 }
 
 .am-portrait {
+  position: relative;
+  z-index: 1;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top center;
+  max-height: 85vh;
+  object-fit: contain; /* Prevents cutting the image */
   display: block;
   filter: contrast(1.04) saturate(0.88);
-  transform: scale(1.02);
+  transform: scale(1.1); /* Make it little big */
   transition: transform 1s ease;
 }
-.am-section:hover .am-portrait { transform: scale(1); }
+.am-section:hover .am-portrait { transform: scale(1.15); }
 
 /* RIGHT: content column */
 .am-content-col {

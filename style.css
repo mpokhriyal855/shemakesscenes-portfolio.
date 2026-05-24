@@ -1,4 +1,4 @@
-/* ===========================
+﻿/* ===========================
    ROOT & RESET
    =========================== */
 @import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap');
@@ -55,7 +55,7 @@ body {
 }
 
 /* ===========================
-   CURSOR – Real arrow, just bigger
+   CURSOR â€“ Real arrow, just bigger
    Custom SVG that matches OS arrow but scaled up ~1.6x
    =========================== */
 :root {
@@ -104,7 +104,7 @@ button,
   padding: 0;
 }
 
-/* ── NAV ── */
+/* â”€â”€ NAV â”€â”€ */
 .pf-nav {
   position: fixed;
   top: 0;
@@ -141,7 +141,7 @@ button,
 
 .pf-nav-item:hover { color: #000; }
 
-/* ── TITLE BLOCK ── */
+/* â”€â”€ TITLE BLOCK â”€â”€ */
 .pf-title-wrap {
   position: relative;
   text-align: center;
@@ -168,7 +168,7 @@ button,
   to { opacity:1; transform:translateY(0); }
 }
 
-/* Calligraphy name — sits below portfolio */
+/* Calligraphy name â€” sits below portfolio */
 .pf-script-name {
   display: block;
   margin-top: 10px; /* Small gap to sit right below */
@@ -188,7 +188,7 @@ button,
   to { opacity:1; transform: translateY(0); }
 }
 
-/* ── FOOTER ROW ── */
+/* â”€â”€ FOOTER ROW â”€â”€ */
 .pf-footer-row {
   display: flex;
   justify-content: center;
@@ -226,7 +226,7 @@ button,
 }
 
 /* ===========================
-   ABOUT ME — new design
+   ABOUT ME â€” new design
    =========================== */
 .am-section {
   position: relative;
@@ -505,7 +505,7 @@ button,
 }
 
 .res-list li::before {
-  content: '▸';
+  content: 'â–¸';
   position: absolute;
   left: 0;
   color: #ff85c0;
@@ -708,7 +708,7 @@ button,
 .pf-line-bottom { bottom: 80px; }
 
 /* ===========================
-   ABOUT ME — new design
+   ABOUT ME â€” new design
    =========================== */
 .am-section {
   position: relative;
@@ -782,7 +782,7 @@ button,
   overflow: hidden;
 }
 
-/* Stacked heading — ghost layer sits 1 line above solid */
+/* Stacked heading â€” ghost layer sits 1 line above solid */
 .am-heading-stack {
   position: relative;
   line-height: 1;
@@ -1206,9 +1206,9 @@ body .stats-strip {
   transition: filter 0.9s ease 0.2s, transform 0.9s ease 0.2s;
 }
 
-/* ═══════════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    GLASSMORPHIC SPLASH PAGE
-═══════════════════════════════════════════════ */
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
 .splash {
   position: fixed;
@@ -1236,7 +1236,7 @@ body .stats-strip {
   pointer-events: none;
 }
 
-/* ── Background ── */
+/* â”€â”€ Background â”€â”€ */
 .splash-bg {
   position: absolute;
   inset: 0;
@@ -1313,7 +1313,7 @@ body .stats-strip {
   }
 }
 
-/* ── Corner glass panels ── */
+/* â”€â”€ Corner glass panels â”€â”€ */
 .glass-grid {
   position: absolute;
   inset: 0;
@@ -1366,7 +1366,7 @@ body .stats-strip {
   }
 }
 
-/* ── Centre content ── */
+/* â”€â”€ Centre content â”€â”€ */
 .splash-center {
   position: relative;
   z-index: 2;
@@ -1390,7 +1390,7 @@ body .stats-strip {
   animation: fadeSlideIn 1.2s ease 0.3s both;
 }
 
-/* ── Main title ── */
+/* â”€â”€ Main title â”€â”€ */
 .splash-title {
   display: flex;
   flex-direction: column;
@@ -1440,7 +1440,7 @@ body .stats-strip {
   }
 }
 
-/* ── Progress bar ── */
+/* â”€â”€ Progress bar â”€â”€ */
 .splash-progress {
   display: flex;
   flex-direction: column;
@@ -1485,9 +1485,9 @@ body .stats-strip {
   }
 }
 
-/* ═══════════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    SERVICES STRIP (SCRAPBOOK AESTHETIC)
-═══════════════════════════════════════════════ */
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 .services-strip {
   padding: 100px 5% 120px;
   background: var(--dark);
@@ -1626,9 +1626,9 @@ body .stats-strip {
   width: 90px;
 }
 
-/* ═══════════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    VIDEO GALLERY (MASONRY)
-═══════════════════════════════════════════════ */
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 .video-gallery {
   padding: 100px 5% 120px;
   background: var(--pink);
@@ -1772,9 +1772,9 @@ body .stats-strip {
   background: #fff;
 }
 
-/* ═══════════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    VIDEO LIGHTBOX MODAL
-═══════════════════════════════════════════════ */
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 .video-modal {
   position: fixed;
   inset: 0;
@@ -1846,9 +1846,9 @@ body.modal-open > *:not(.video-modal) {
 }
 
 
-/* ═══════════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    CLIENT LOVE (iMessage Testimonials)
-═══════════════════════════════════════════════ */
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 .testimonials-strip {
   padding: 100px 5% 120px;
   background: linear-gradient(to bottom, var(--cream), var(--lilac));
@@ -1939,9 +1939,9 @@ body.modal-open > *:not(.video-modal) {
 }
 
 
-/* ═══════════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    FOOTER (Let's Connect)
-═══════════════════════════════════════════════ */
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 .footer-strip {
   background: var(--dark);
   padding: 120px 5% 40px;
@@ -2108,13 +2108,13 @@ body.modal-open > *:not(.video-modal) {
   flex-direction: row;
 }
 
-/* Row variant: 2 images · phone · 2 images */
+/* Row variant: 2 images Â· phone Â· 2 images */
 .post-row--2-phone-2 {
   flex-direction: row;
   justify-content: center;
 }
 
-/* ── Post Thumbnails (square/portrait ratio) ── */
+/* â”€â”€ Post Thumbnails (square/portrait ratio) â”€â”€ */
 .post-thumb {
   flex: 1;
   min-width: 0;
@@ -2151,7 +2151,7 @@ body.modal-open > *:not(.video-modal) {
 }
 
 .post-img-placeholder::after {
-  content: '✦';
+  content: 'âœ¦';
   font-size: 1.5rem;
   color: rgba(232, 180, 200, 0.2);
 }
@@ -2160,7 +2160,7 @@ body.modal-open > *:not(.video-modal) {
   transform: scale(1.03);
 }
 
-/* ── Phone Mockup ── */
+/* â”€â”€ Phone Mockup â”€â”€ */
 .phone-mockup-wrap {
   flex: 0 0 auto;
   width: clamp(180px, 20vw, 260px);
@@ -2210,7 +2210,7 @@ body.modal-open > *:not(.video-modal) {
   margin-top: 8px;
 }
 
-/* ── Instagram Header inside phone ── */
+/* â”€â”€ Instagram Header inside phone â”€â”€ */
 .insta-header {
   display: flex;
   align-items: center;
@@ -2241,7 +2241,7 @@ body.modal-open > *:not(.video-modal) {
   text-overflow: ellipsis;
 }
 
-/* ── Instagram Carousel ── */
+/* â”€â”€ Instagram Carousel â”€â”€ */
 .insta-carousel {
   flex: none;
   width: 100%;
@@ -2328,7 +2328,7 @@ body.modal-open > *:not(.video-modal) {
   transform: scale(1.3);
 }
 
-/* ── Instagram Footer ── */
+/* â”€â”€ Instagram Footer â”€â”€ */
 .insta-footer {
   display: flex;
   align-items: center;
@@ -2411,7 +2411,7 @@ body.modal-open > *:not(.video-modal) {
   overflow: hidden;
 }
 
-/* ── Header ── */
+/* â”€â”€ Header â”€â”€ */
 .story-design-header {
   text-align: center;
   margin-bottom: 64px;
@@ -2452,7 +2452,7 @@ body.modal-open > *:not(.video-modal) {
   letter-spacing: 0.04em;
 }
 
-/* ── Phone Row ── */
+/* â”€â”€ Phone Row â”€â”€ */
 .story-phone-row {
   display: flex;
   align-items: flex-end;
@@ -2561,7 +2561,7 @@ body.modal-open > *:not(.video-modal) {
   border-radius: 2px;
 }
 
-/* ── Image Row ── */
+/* â”€â”€ Image Row â”€â”€ */
 .story-img-row {
   display: flex;
   gap: 2px;
@@ -2630,7 +2630,7 @@ body.modal-open > *:not(.video-modal) {
 }
 
 /* ===========================
-   SD (Story Design) SECTION — Diagonal Cascade
+   SD (Story Design) SECTION â€” Diagonal Cascade
    =========================== */
 .sd-section {
   background: #0d0d1a;
@@ -2638,7 +2638,7 @@ body.modal-open > *:not(.video-modal) {
   overflow: hidden;
 }
 
-/* ── Diagonal label (Oversized, aligned to 2nd phone start, elegant serif) ── */
+/* â”€â”€ Diagonal label (Oversized, aligned to 2nd phone start, elegant serif) â”€â”€ */
 .sd-label-wrap {
   text-align: left;
   padding: 60px 20px 0; /* Removed bottom padding */
@@ -2674,7 +2674,7 @@ body.modal-open > *:not(.video-modal) {
   opacity: 0.8;
 }
 
-/* ── Cascade clip container — close vertical overlap, visible overflow ── */
+/* â”€â”€ Cascade clip container â€” close vertical overlap, visible overflow â”€â”€ */
 .sd-cascade-clip {
   overflow: visible; /* Allows glowing outlines & hovered scaling to overflow rows nicely */
   padding: 0;
@@ -2690,7 +2690,7 @@ body.modal-open > *:not(.video-modal) {
 .sd-cascade-clip:nth-of-type(4) { z-index: 4; }
 .sd-cascade-clip:nth-of-type(5) { z-index: 5; }
 
-/* ── Cascade row: the full row is rotated as one unit ── */
+/* â”€â”€ Cascade row: the full row is rotated as one unit â”€â”€ */
 .sd-cascade {
   display: flex;
   align-items: center;
@@ -2706,7 +2706,7 @@ body.modal-open > *:not(.video-modal) {
   transform: translateY(-50%) rotate(-12deg);
 }
 
-/* ── Individual phone units (enlarged) ── */
+/* â”€â”€ Individual phone units (enlarged) â”€â”€ */
 .sd-phone {
   flex: 0 0 auto;
   width: clamp(200px, 23vw, 320px); /* Larger phone frames */
@@ -2799,7 +2799,7 @@ body.modal-open > *:not(.video-modal) {
   }
 }
 
-/* ── Highlighted phone styles (glowing white border/outline & slightly larger size) ── */
+/* â”€â”€ Highlighted phone styles (glowing white border/outline & slightly larger size) â”€â”€ */
 .sd-phone--highlighted {
   z-index: 8 !important;
 }
@@ -2849,3 +2849,30 @@ body.modal-open > *:not(.video-modal) {
      . m a s o n r y - i t e m   {   m a r g i n - b o t t o m :   1 0 p x ;   b o r d e r - r a d i u s :   8 p x ;   }  
  }  
  
+/* ===========================
+   PINTEREST MOOD BOARD
+   =========================== */
+.moodboard-section {
+  padding: 100px 5%;
+  background: transparent;
+}
+.masonry-grid {
+  column-count: 4;
+  column-gap: 15px;
+  max-width: 1400px;
+  margin: 40px auto 0;
+}
+.masonry-item {
+  width: 100%;
+  margin-bottom: 15px;
+  border-radius: 12px;
+  break-inside: avoid;
+  object-fit: cover;
+}
+@media (max-width: 900px) {
+  .masonry-grid { column-count: 3; }
+}
+@media (max-width: 600px) {
+  .masonry-grid { column-count: 2; column-gap: 10px; }
+  .masonry-item { margin-bottom: 10px; border-radius: 8px; }
+}

@@ -96,18 +96,16 @@ button,
    =========================== */
 .pf-hero {
   position: relative;
-  background: linear-gradient(120deg, #f2f2f0, #eae6e3, #f5f0eb, #f2f2f0);
-  background-size: 300% 300%;
+  background: #f2f2f0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   overflow: hidden;
   padding: 0;
-  animation: heroGradient 15s ease infinite;
+  
 }
 
-@keyframes heroGradient {
-  0% { background-position: 0% 50%; }
+
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
@@ -157,11 +155,10 @@ button,
   padding: 120px 2% 0;
   line-height: 1;
   user-select: none;
-  animation: floatTitle 6s ease-in-out infinite alternate;
+  
 }
 
-@keyframes floatTitle {
-  0% { transform: translateY(0); }
+
   100% { transform: translateY(-20px); }
 }
 
@@ -179,7 +176,9 @@ button,
 }
 
 @keyframes titleReveal {
-  to { opacity:1; transform:translateY(0); }
+  0% { opacity: 0; transform: translateY(60px); letter-spacing: 0.15em; filter: blur(10px); }
+  100% { opacity: 1; transform: translateY(0); letter-spacing: 0.05em; filter: blur(0); }
+}
 }
 
 /* Calligraphy name â€” sits below portfolio */
@@ -199,7 +198,9 @@ button,
 }
 
 @keyframes scriptReveal {
-  to { opacity:1; transform: translateY(0); }
+  0% { opacity: 0; transform: translateX(-50%) translateY(20px); filter: blur(10px); }
+  100% { opacity: 1; transform: translateX(-50%) translateY(0); filter: blur(0); }
+}
 }
 
 /* â”€â”€ FOOTER ROW â”€â”€ */
@@ -282,9 +283,9 @@ button,
 .am-portrait {
   position: relative;
   z-index: 1;
-  width: calc(100% - 8px);
-  height: calc(100vh - 8px); /* Cover page with small margin */
-  margin: 4px auto; /* 4px margin top and bottom */
+  width: calc(100% - 6px);
+  height: calc(100vh - 6px); /* Cover page with small margin */
+  margin: 3px auto; /* 3px margin top and bottom */
   object-fit: cover; /* Cover the page as requested */
   object-position: center;
   display: block;
@@ -654,9 +655,10 @@ button,
   bottom: -5px;
   left: 50%;
   transform: translateX(-50%);
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-size: clamp(2rem, 5vw, 5rem);
+  font-family: "Pinyon Script", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: clamp(3.5rem, 8vw, 8rem);
   color: rgba(0,0,0,0.65);
   white-space: nowrap;
   animation: scriptReveal 1.3s 0.3s cubic-bezier(0.22, 1, 0.36, 1) forwards;
@@ -665,7 +667,9 @@ button,
 }
 
 @keyframes scriptReveal {
-  to { opacity:1; transform: translateX(-50%) translateY(0); }
+  0% { opacity: 0; transform: translateX(-50%) translateY(20px); filter: blur(10px); }
+  100% { opacity: 1; transform: translateX(-50%) translateY(0); filter: blur(0); }
+}
 }
 
 /* Footer row: year pill + scroll cue */
@@ -1443,10 +1447,9 @@ body .stats-strip {
 }
 
 @keyframes titleReveal {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
+  0% { opacity: 0; transform: translateY(60px); letter-spacing: 0.15em; filter: blur(10px); }
+  100% { opacity: 1; transform: translateY(0); letter-spacing: 0.05em; filter: blur(0); }
+}
 
   to {
     opacity: 1;
@@ -2834,34 +2837,62 @@ body.modal-open > *:not(.video-modal) {
   box-shadow:
     0 0 45px rgba(255, 255, 255, 1),
     0 25px 60px rgba(0, 0, 0, 0.9);
-} 
- / *   = = = = = = = = = = = = = = = = = = = = = = = = = = =  
-       P I N T E R E S T   M O O D   B O A R D  
-       = = = = = = = = = = = = = = = = = = = = = = = = = = =   * /  
- . m o o d b o a r d - s e c t i o n   {  
-     p a d d i n g :   1 0 0 p x   5 % ;  
-     b a c k g r o u n d :   t r a n s p a r e n t ;  
- }  
- . m a s o n r y - g r i d   {  
-     c o l u m n - c o u n t :   4 ;  
-     c o l u m n - g a p :   1 5 p x ;  
-     m a x - w i d t h :   1 4 0 0 p x ;  
-     m a r g i n :   4 0 p x   a u t o   0 ;  
- }  
- . m a s o n r y - i t e m   {  
-     w i d t h :   1 0 0 % ;  
-     m a r g i n - b o t t o m :   1 5 p x ;  
-     b o r d e r - r a d i u s :   1 2 p x ;  
-     b r e a k - i n s i d e :   a v o i d ;  
-     o b j e c t - f i t :   c o v e r ;  
- }  
- @ m e d i a   ( m a x - w i d t h :   9 0 0 p x )   {  
-     . m a s o n r y - g r i d   {   c o l u m n - c o u n t :   3 ;   }  
- }  
- @ m e d i a   ( m a x - w i d t h :   6 0 0 p x )   {  
-     . m a s o n r y - g r i d   {   c o l u m n - c o u n t :   2 ;   c o l u m n - g a p :   1 0 p x ;   }  
-     . m a s o n r y - i t e m   {   m a r g i n - b o t t o m :   1 0 p x ;   b o r d e r - r a d i u s :   8 p x ;   }  
- }  
+}
+ 
+ / *   = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+ 
+       P I N T E R E S T   M O O D   B O A R D 
+ 
+       = = = = = = = = = = = = = = = = = = = = = = = = = = =   * / 
+ 
+ . m o o d b o a r d - s e c t i o n   { 
+ 
+     p a d d i n g :   1 0 0 p x   5 % ; 
+ 
+     b a c k g r o u n d :   t r a n s p a r e n t ; 
+ 
+ } 
+ 
+ . m a s o n r y - g r i d   { 
+ 
+     c o l u m n - c o u n t :   4 ; 
+ 
+     c o l u m n - g a p :   1 5 p x ; 
+ 
+     m a x - w i d t h :   1 4 0 0 p x ; 
+ 
+     m a r g i n :   4 0 p x   a u t o   0 ; 
+ 
+ } 
+ 
+ . m a s o n r y - i t e m   { 
+ 
+     w i d t h :   1 0 0 % ; 
+ 
+     m a r g i n - b o t t o m :   1 5 p x ; 
+ 
+     b o r d e r - r a d i u s :   1 2 p x ; 
+ 
+     b r e a k - i n s i d e :   a v o i d ; 
+ 
+     o b j e c t - f i t :   c o v e r ; 
+ 
+ } 
+ 
+ @ m e d i a   ( m a x - w i d t h :   9 0 0 p x )   { 
+ 
+     . m a s o n r y - g r i d   {   c o l u m n - c o u n t :   3 ;   } 
+ 
+ } 
+ 
+ @ m e d i a   ( m a x - w i d t h :   6 0 0 p x )   { 
+ 
+     . m a s o n r y - g r i d   {   c o l u m n - c o u n t :   2 ;   c o l u m n - g a p :   1 0 p x ;   } 
+ 
+     . m a s o n r y - i t e m   {   m a r g i n - b o t t o m :   1 0 p x ;   b o r d e r - r a d i u s :   8 p x ;   } 
+ 
+ } 
+ 
  
 /* ===========================
    PINTEREST MOOD BOARD

@@ -28,7 +28,7 @@
   --font-block: 'Bebas Neue', sans-serif;
   --font-serif: 'DM Serif Display', serif;
   --font-body: 'Outfit', sans-serif;
-  --font-script: 'Cintarini', 'Great Vibes', cursive;
+  --font-script: 'Pinyon Script', 'Great Vibes', cursive;
 }
 
 *,
@@ -166,24 +166,23 @@ button,
   to { opacity:1; transform:translateY(0); }
 }
 
-/* Calligraphy name — just touching portfolio */
+/* Calligraphy name — sits below portfolio */
 .pf-script-name {
-  position: absolute;
-  bottom: 0px; /* Sits exactly at the bottom bound of the title wrapper */
-  left: 50%;
+  display: block;
+  margin-top: 20px;
   font-family: var(--font-script);
   font-style: normal;
-  font-size: clamp(3rem, 7vw, 7rem); 
+  font-size: clamp(3.5rem, 8vw, 8rem); /* Slightly larger for Pinyon Script */ 
   color: rgba(0,0,0,0.7);
   letter-spacing: 0.03em;
   white-space: nowrap;
   animation: scriptReveal 1.2s 0.35s cubic-bezier(0.22, 1, 0.36, 1) forwards;
   opacity: 0;
-  transform: translateX(-50%) translateY(20px);
+  transform: translateY(20px);
 }
 
 @keyframes scriptReveal {
-  to { opacity:1; transform: translateX(-50%) translateY(0); }
+  to { opacity:1; transform: translateY(0); }
 }
 
 /* ── FOOTER ROW ── */

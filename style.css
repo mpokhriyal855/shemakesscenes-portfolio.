@@ -19,7 +19,7 @@
   --font-block: 'Bebas Neue', sans-serif;
   --font-serif: 'DM Serif Display', serif;
   --font-body: 'Outfit', sans-serif;
-  --font-script: 'Alex Brush', cursive;
+  --font-script: 'Great Vibes', cursive;
 }
 
 *,
@@ -157,22 +157,24 @@ button,
   to { opacity:1; transform:translateY(0); }
 }
 
-/* Calligraphy name — sits slightly below the PORTFOLIO baseline, centred */
+/* Calligraphy name — positioned specifically at bottom: -30px */
 .pf-script-name {
-  display: block;
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
   font-family: var(--font-script);
-  font-style: normal; /* Script fonts are already cursive/italic */
-  font-size: clamp(2.5rem, 6.5vw, 6.5rem);
+  font-style: normal;
+  font-size: clamp(3rem, 7vw, 7rem); /* slightly larger for Great Vibes */
   color: rgba(0,0,0,0.7);
-  margin-top: 15px;   /* little below PORTFOLIO */
-  letter-spacing: 0.02em;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
   animation: scriptReveal 1.2s 0.35s cubic-bezier(0.22, 1, 0.36, 1) forwards;
   opacity: 0;
-  transform: translateY(18px);
+  transform: translateX(-50%) translateY(20px);
 }
 
 @keyframes scriptReveal {
-  to { opacity:1; transform: translateY(0); }
+  to { opacity:1; transform: translateX(-50%) translateY(0); }
 }
 
 /* ── FOOTER ROW ── */

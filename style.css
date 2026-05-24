@@ -249,7 +249,7 @@ button,
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 40px;
+  overflow: hidden; /* Prevent bleeding into other sections */
 }
 
 /* The small grey circle behind the image */
@@ -269,11 +269,12 @@ button,
   position: relative;
   z-index: 1;
   width: 100%;
-  max-height: 85vh;
-  object-fit: contain; /* Prevents cutting the image */
+  height: 90vh; /* Make it very big */
+  object-fit: cover; /* Allows cropping */
+  object-position: center bottom; /* Crop the top blank part, anchor to bottom */
   display: block;
   filter: contrast(1.04) saturate(0.88);
-  transform: scale(1.1); /* Make it little big */
+  transform: scale(1.1); /* Zoom in to make it even bigger */
   transition: transform 1s ease;
 }
 .am-section:hover .am-portrait { transform: scale(1.15); }

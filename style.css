@@ -1,6 +1,15 @@
 /* ===========================
    ROOT & RESET
    =========================== */
+@font-face {
+  font-family: 'Cintarini';
+  src: url('assets/fonts/Cintarini.ttf') format('truetype'),
+       url('assets/fonts/Cintarini.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --pink: #E6B8BA;
   /* Blush */
@@ -19,7 +28,7 @@
   --font-block: 'Bebas Neue', sans-serif;
   --font-serif: 'DM Serif Display', serif;
   --font-body: 'Outfit', sans-serif;
-  --font-script: 'Great Vibes', cursive;
+  --font-script: 'Cintarini', 'Great Vibes', cursive;
 }
 
 *,
@@ -157,14 +166,14 @@ button,
   to { opacity:1; transform:translateY(0); }
 }
 
-/* Calligraphy name — positioned specifically at bottom: -30px */
+/* Calligraphy name — just touching portfolio */
 .pf-script-name {
   position: absolute;
-  bottom: -30px;
+  bottom: 0px; /* Sits exactly at the bottom bound of the title wrapper */
   left: 50%;
   font-family: var(--font-script);
   font-style: normal;
-  font-size: clamp(3rem, 7vw, 7rem); /* slightly larger for Great Vibes */
+  font-size: clamp(3rem, 7vw, 7rem); 
   color: rgba(0,0,0,0.7);
   letter-spacing: 0.03em;
   white-space: nowrap;

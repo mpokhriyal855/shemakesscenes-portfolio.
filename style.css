@@ -1,6 +1,8 @@
 /* ===========================
    ROOT & RESET
    =========================== */
+@import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap');
+
 @font-face {
   font-family: 'Cintarini';
   src: url('assets/fonts/Cintarini.ttf') format('truetype'),
@@ -170,7 +172,7 @@ button,
 .pf-script-name {
   display: block;
   margin-top: 10px; /* Small gap to sit right below */
-  font-family: var(--font-script);
+  font-family: "Pinyon Script", cursive;
   font-weight: 400; /* As requested by Google Fonts snippet */
   font-style: normal;
   font-size: clamp(3.5rem, 8vw, 8rem); /* Slightly larger for Pinyon Script */ 
@@ -346,19 +348,22 @@ button,
   top: 0;
   left: 0;
   right: 0;
-  height: 180px;
+  height: 120px;
   overflow: hidden;
   z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .resume-ribbon {
   position: absolute;
-  width: 80%;
-  left: 10%;
-  padding: 12px 0;
+  width: 120vw;
+  left: -10vw;
+  padding: 5px 0;
   font-family: var(--font-serif);
   font-style: italic;
-  font-size: 3.5rem;
+  font-size: 2.2rem;
   color: #fff;
   line-height: 1;
   white-space: nowrap;
@@ -368,12 +373,12 @@ button,
 
 .ribbon-back {
   background: #e65c9c; /* darker pink */
-  transform: rotate(-3deg) translateY(40px);
+  transform: rotate(-3deg);
 }
 
 .ribbon-front {
   background: #ff85c0; /* lighter pink */
-  transform: rotate(2deg) translateY(10px);
+  transform: rotate(3deg);
 }
 
 .marquee-content span {

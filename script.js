@@ -243,6 +243,15 @@ document.addEventListener('DOMContentLoaded', () => {
           modalVideo.poster = 'assets/poster_' + posterName + '.jpg';
           modalVideo.currentTime = 0;
           document.body.classList.add('modal-open');
+          
+          // Check if the thumbnail has the rotate-fix class
+          const hasRotateFix = item.querySelector('.v-thumb.rotate-fix');
+          if (hasRotateFix) {
+            videoModal.classList.add('rotate-video');
+          } else {
+            videoModal.classList.remove('rotate-video');
+          }
+          
           videoModal.classList.add('active');
           modalVideo.play();
         }
@@ -252,6 +261,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeModal = () => {
       document.body.classList.remove('modal-open');
       videoModal.classList.remove('active');
+      videoModal.classList.remove('rotate-video');
       modalVideo.pause();
       modalVideo.src = ""; // Stop buffering
     };

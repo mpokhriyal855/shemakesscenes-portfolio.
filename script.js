@@ -191,9 +191,9 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ──────────────────────────────
-  // 6.5 VIDEO THUMBNAILS (Autoplay on scroll & 8s loop)
+  // 6.5 VIDEO THUMBNAILS (Autoplay on scroll)
   // ──────────────────────────────
-  const thumbVideos = document.querySelectorAll('.v-thumb');
+  const thumbVideos = document.querySelectorAll('.v-thumb, .sd-pscreen video');
   
   if (thumbVideos.length > 0) {
     const videoObserver = new IntersectionObserver((entries) => {

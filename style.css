@@ -438,6 +438,74 @@ button,
   margin-top: 40px;
 }
 
+/* Quote Box */
+.res-quote-box {
+  border-left: 3px solid #ff85c0;
+  padding-left: 20px;
+  margin-bottom: 40px;
+}
+
+.res-quote {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  font-style: italic;
+  line-height: 1.6;
+  color: #fff;
+}
+
+/* Tiny Words */
+.res-tiny-words {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: #d1d1d1;
+  letter-spacing: 0.1em;
+  text-transform: lowercase;
+  line-height: 2;
+  opacity: 0.8;
+}
+
+/* Lists */
+.res-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.res-list li {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  color: #d1d1d1;
+  margin-bottom: 12px;
+  position: relative;
+  padding-left: 20px;
+}
+
+.res-list li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: #ff85c0;
+  font-size: 1.1rem;
+}
+
+/* Tools */
+.res-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.res-tools span {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 6px 16px;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 4px;
+  color: #fff;
+  background: rgba(255,255,255,0.03);
+}
+
 /* Skills Pills */
 .res-skills {
   display: flex;

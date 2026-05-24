@@ -269,15 +269,15 @@ button,
   position: relative;
   z-index: 1;
   width: 100%;
-  height: 90vh; /* Make it very big */
+  height: 100vh; /* Cover entire page from top to bottom */
   object-fit: cover; /* Allows cropping */
   object-position: center bottom; /* Crop the top blank part, anchor to bottom */
   display: block;
   filter: contrast(1.04) saturate(0.88);
-  transform: scale(1.1); /* Zoom in to make it even bigger */
+  transform: scale(1.25); /* Zoom in to make it even bigger and crop more empty space */
   transition: transform 1s ease;
 }
-.am-section:hover .am-portrait { transform: scale(1.15); }
+.am-section:hover .am-portrait { transform: scale(1.3); }
 
 /* RIGHT: content column */
 .am-content-col {

@@ -185,7 +185,7 @@ button,
 /* Calligraphy name â€” sits below portfolio */
 .pf-script-name {
   display: block;
-  margin-top: 10px; /* Small gap to sit right below */
+  margin-top: -0.38em; /* Pull it up to barely touch */
   font-family: "Pinyon Script", cursive;
   font-weight: 400; /* As requested by Google Fonts snippet */
   font-style: normal;
@@ -1818,9 +1818,10 @@ body .stats-strip {
 
 /* Rotated video styling in modal */
 .video-modal.rotate-video .modal-content {
-  width: 90vw;
-  max-width: 800px;
+  width: min(90vw, 142.22vh);
+  height: min(50.625vw, 80vh);
   aspect-ratio: 16 / 9;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1828,11 +1829,15 @@ body .stats-strip {
 }
 
 .video-modal.rotate-video #modalVideo {
-  transform: rotate(270deg);
-  width: calc(100% * 9 / 16); /* Swapped width */
-  height: 100%; /* Swapped height */
-  max-height: none;
-  object-fit: cover;
+  position: absolute;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) rotate(270deg) !important;
+  width: min(80vh, 90vw * 9 / 16) !important;  /* Physical width (becomes visual height) */
+  height: min(142.22vh, 90vw) !important;      /* Physical height (becomes visual width) */
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: contain !important;
 }
 
 .modal-close {

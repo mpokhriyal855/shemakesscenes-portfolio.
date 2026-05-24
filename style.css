@@ -1149,12 +1149,22 @@ button,
 
 .stat-label {
   font-family: var(--font-body);
-  font-size: clamp(0.7rem, 1.2vw, 0.9rem);
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.7);
-  margin-top: 6px;
+  font-size: clamp(0.9rem, 2vw, 1.2rem);
   font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-top: -10px;
+}
+
+.stat-label-lg {
+  font-family: var(--font-block);
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--black);
+  text-align: center;
+  max-width: 300px;
+  line-height: 1.1;
 }
 
 .stat-divider {
@@ -2810,4 +2820,32 @@ body.modal-open > *:not(.video-modal) {
   box-shadow:
     0 0 45px rgba(255, 255, 255, 1),
     0 25px 60px rgba(0, 0, 0, 0.9);
-}
+} 
+ / *   = = = = = = = = = = = = = = = = = = = = = = = = = = =  
+       P I N T E R E S T   M O O D   B O A R D  
+       = = = = = = = = = = = = = = = = = = = = = = = = = = =   * /  
+ . m o o d b o a r d - s e c t i o n   {  
+     p a d d i n g :   1 0 0 p x   5 % ;  
+     b a c k g r o u n d :   t r a n s p a r e n t ;  
+ }  
+ . m a s o n r y - g r i d   {  
+     c o l u m n - c o u n t :   4 ;  
+     c o l u m n - g a p :   1 5 p x ;  
+     m a x - w i d t h :   1 4 0 0 p x ;  
+     m a r g i n :   4 0 p x   a u t o   0 ;  
+ }  
+ . m a s o n r y - i t e m   {  
+     w i d t h :   1 0 0 % ;  
+     m a r g i n - b o t t o m :   1 5 p x ;  
+     b o r d e r - r a d i u s :   1 2 p x ;  
+     b r e a k - i n s i d e :   a v o i d ;  
+     o b j e c t - f i t :   c o v e r ;  
+ }  
+ @ m e d i a   ( m a x - w i d t h :   9 0 0 p x )   {  
+     . m a s o n r y - g r i d   {   c o l u m n - c o u n t :   3 ;   }  
+ }  
+ @ m e d i a   ( m a x - w i d t h :   6 0 0 p x )   {  
+     . m a s o n r y - g r i d   {   c o l u m n - c o u n t :   2 ;   c o l u m n - g a p :   1 0 p x ;   }  
+     . m a s o n r y - i t e m   {   m a r g i n - b o t t o m :   1 0 p x ;   b o r d e r - r a d i u s :   8 p x ;   }  
+ }  
+ 

@@ -270,14 +270,14 @@ button,
   z-index: 1;
   width: 100%;
   height: 100vh; /* Cover entire page from top to bottom */
-  object-fit: cover; /* Allows cropping */
-  object-position: center bottom; /* Crop the top blank part, anchor to bottom */
+  object-fit: cover; /* Allows cropping to fill area */
+  object-position: center; /* Center the image safely */
   display: block;
   filter: contrast(1.04) saturate(0.88);
-  transform: scale(1.25); /* Zoom in to make it even bigger and crop more empty space */
+  transform: scale(1.0); /* Reset scale so it doesn't push the subject off screen */
   transition: transform 1s ease;
 }
-.am-section:hover .am-portrait { transform: scale(1.3); }
+.am-section:hover .am-portrait { transform: scale(1.05); }
 
 /* RIGHT: content column */
 .am-content-col {

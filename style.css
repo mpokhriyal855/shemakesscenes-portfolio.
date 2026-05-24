@@ -269,15 +269,16 @@ button,
   position: relative;
   z-index: 1;
   width: 100%;
-  height: 50vh; /* Make it more more short */
+  height: 45vh; /* Make it even shorter to allow margin */
+  margin: 5% auto; /* Add margin on top and bottom */
   object-fit: contain; /* Don't crop 11.png */
   object-position: center; /* Center it naturally over the grey circle */
   display: block;
   filter: contrast(1.04) saturate(0.88);
-  transform: scale(1.05); /* Just a slight pop */
+  transform: scale(1.0); /* Reset scale so it fits nicely in margin */
   transition: transform 1s ease;
 }
-.am-section:hover .am-portrait { transform: scale(1.1); }
+.am-section:hover .am-portrait { transform: scale(1.05); }
 
 /* RIGHT: content column */
 .am-content-col {
@@ -754,18 +755,7 @@ button,
   overflow: hidden;
 }
 
-.am-portrait {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top;
-  display: block;
-  filter: contrast(1.05) saturate(0.85);
-  transform: scale(1.03);
-  transition: transform 0.8s ease;
-}
 
-.am-section:hover .am-portrait { transform: scale(1); }
 
 /* Ghost overlay (translucent portrait duplicate via CSS) */
 .am-portrait-ghost {

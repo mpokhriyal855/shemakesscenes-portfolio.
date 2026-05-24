@@ -90,6 +90,95 @@ button,
   justify-content: center;
   background: var(--cream);
   padding: 40px 5%;
+  overflow: hidden;
+}
+
+/* Dynamic Mesh Background */
+.hero-bg-gradient {
+  position: absolute;
+  inset: -50%;
+  background: radial-gradient(circle at 50% 50%, rgba(210,144,148,0.15), transparent 40%),
+              radial-gradient(circle at 80% 20%, rgba(217,208,227,0.2), transparent 40%),
+              radial-gradient(circle at 20% 80%, rgba(195,213,197,0.15), transparent 40%),
+              radial-gradient(circle at 80% 80%, rgba(184,201,212,0.15), transparent 40%);
+  animation: bgShift 20s ease-in-out infinite alternate;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@keyframes bgShift {
+  0% { transform: scale(1) translate(0, 0); }
+  50% { transform: scale(1.1) translate(2%, -2%); }
+  100% { transform: scale(1) translate(-2%, 2%); }
+}
+
+/* Floating Assets */
+.hero-float-assets {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-float-item {
+  position: absolute;
+  filter: drop-shadow(0 20px 30px rgba(0,0,0,0.1));
+  opacity: 0.8;
+}
+
+.hf-matcha {
+  width: 120px;
+  top: 15%;
+  left: 10%;
+  transform: rotate(-15deg);
+  animation-delay: 0s;
+}
+
+.hf-handbag {
+  width: 180px;
+  bottom: 20%;
+  right: 5%;
+  transform: rotate(10deg);
+  animation-delay: 1.5s;
+}
+
+.hf-polaroid {
+  width: 150px;
+  top: 25%;
+  right: 15%;
+  transform: rotate(20deg);
+  animation-delay: 0.7s;
+}
+
+/* Marquee */
+.hero-marquee-wrap {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: var(--dark);
+  color: var(--cream);
+  padding: 15px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  z-index: 3;
+  font-family: var(--font-block);
+  font-size: 1.5rem;
+  letter-spacing: 0.1em;
+}
+
+.hero-marquee-track {
+  display: inline-block;
+  animation: marqueeScroll 30s linear infinite;
+}
+
+.hero-marquee-track span {
+  padding-right: 20px;
+}
+
+@keyframes marqueeScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 .hero-container {

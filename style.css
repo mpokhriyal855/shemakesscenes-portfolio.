@@ -268,14 +268,14 @@ button,
 .am-portrait {
   position: relative;
   z-index: 1;
-  width: 100%;
-  height: 45vh; /* Make it even shorter to allow margin */
-  margin: 5% auto; /* Add margin on top and bottom */
-  object-fit: contain; /* Don't crop 11.png */
-  object-position: center; /* Center it naturally over the grey circle */
+  width: calc(100% - 8px);
+  height: calc(100vh - 8px); /* Cover page with small margin */
+  margin: 4px auto; /* 4px margin top and bottom */
+  object-fit: cover; /* Cover the page as requested */
+  object-position: center;
   display: block;
   filter: contrast(1.04) saturate(0.88);
-  transform: scale(1.0); /* Reset scale so it fits nicely in margin */
+  transform: scale(1.0);
   transition: transform 1s ease;
 }
 .am-section:hover .am-portrait { transform: scale(1.05); }

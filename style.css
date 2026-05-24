@@ -269,15 +269,15 @@ button,
   position: relative;
   z-index: 1;
   width: 100%;
-  height: 100vh; /* Cover entire page from top to bottom */
-  object-fit: cover; /* Allows cropping to fill area */
-  object-position: center 80%; /* Anchor towards the bottom subject */
+  height: 80vh; /* Make it a little small */
+  object-fit: contain; /* Don't crop 11.png */
+  object-position: center; /* Center it naturally over the grey circle */
   display: block;
   filter: contrast(1.04) saturate(0.88);
-  transform: scale(1.15) translateY(-5%); /* Zoom in and shift up to crop top blank space */
+  transform: scale(1.05); /* Just a slight pop */
   transition: transform 1s ease;
 }
-.am-section:hover .am-portrait { transform: scale(1.2) translateY(-5%); }
+.am-section:hover .am-portrait { transform: scale(1.1); }
 
 /* RIGHT: content column */
 .am-content-col {

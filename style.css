@@ -84,7 +84,6 @@ button,
    =========================== */
 .pf-hero {
   position: relative;
-  min-height: 100vh;
   background: #f2f2f0; /* very light grey */
   display: flex;
   flex-direction: column;
@@ -217,40 +216,16 @@ button,
    =========================== */
 .am-section {
   position: relative;
-  background: #fff;
+  background: #f2f2f0; /* Match pf-hero */
   padding: 0;
   overflow: hidden;
-}
-
-.am-year-row {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 24px 6%;
-  border-bottom: 1px solid rgba(0,0,0,0.07);
-}
-
-.am-year-pill {
-  display: inline-block;
-  border: 1.5px solid rgba(0,0,0,0.3);
-  border-radius: 999px;
-  padding: 4px 16px;
-  font-family: var(--font-body);
-  font-size: 0.72rem;
-  letter-spacing: 0.12em;
-  color: rgba(0,0,0,0.5);
-}
-
-.am-year-ghost {
-  opacity: 0.2;
-  transform: translateY(3px);
 }
 
 /* Two-column grid */
 .am-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  min-height: calc(100vh - 70px);
+  min-height: auto; /* Let content dictate height */
 }
 
 /* LEFT: full-height portrait */
@@ -282,16 +257,6 @@ button,
   overflow: visible;
 }
 
-/* ── STACKED HEADING ── */
-/* The stack wrapper just needs relative positioning and enough top
-   padding to accommodate the ghost copy above it */
-.am-heading-stack {
-  position: relative;
-  padding-top: 1em;          /* room for the ghost copy above */
-  margin-bottom: 16px;
-}
-
-/* Both copies share the same font size */
 .am-heading {
   font-family: var(--font-block);
   font-size: clamp(2.6rem, 6vw, 6rem);
@@ -299,28 +264,9 @@ button,
   line-height: 1;
   color: #111;
   display: block;
+  margin-bottom: 16px;
 }
 
-/* Ghost: absolutely placed 1 full line-height above the solid copy */
-.am-heading-ghost {
-  position: absolute;
-  top: 0;                    /* sits in the padding-top area */
-  left: 0;
-  opacity: 0.13;
-  /* NO blur — just lighter opacity so it looks like an echo/ghost */
-  animation: headingDrift 7s ease-in-out infinite alternate;
-}
-
-@keyframes headingDrift {
-  from { transform: translateY(0);     opacity: 0.13; }
-  to   { transform: translateY(-6px);  opacity: 0.06; }
-}
-
-/* Solid: sits below the ghost, full opacity */
-.am-heading-solid {
-  position: relative;
-  z-index: 1;
-}
 
 .am-subhead {
   font-family: var(--font-serif);
